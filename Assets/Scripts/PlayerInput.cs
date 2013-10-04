@@ -23,4 +23,12 @@ public class PlayerInput : MonoBehaviour {
 		}
 	
 	}
+	
+	/*
+	 * 
+	 * WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOW
+	 * 
+	 * BAD CODE
+	 * 
+	 * /
 }

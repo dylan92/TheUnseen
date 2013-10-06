@@ -1,8 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerInput.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FiredOrb.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerInput.cs" Line="33" Column="6" />
+      <File FileName="Assets\Scripts\LightTracker.cs" Line="38" Column="56" />
+      <File FileName="Assets\Scripts\MouseController.cs" Line="37" Column="22" />
+      <File FileName="Assets\Scripts\AimingOrb.cs" Line="60" Column="72" />
+      <File FileName="Assets\Scripts\FiredOrb.cs" Line="31" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

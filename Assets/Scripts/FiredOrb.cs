@@ -16,6 +16,8 @@ public class FiredOrb : MonoBehaviour {
 	
 	public float age = 1;
 	
+	public bool stickToWalls = true;
+	
 	// Use this for initialization
 	void Start () {
 		Vector3 orbSize = new Vector3(size, size, size);
@@ -43,7 +45,9 @@ public class FiredOrb : MonoBehaviour {
 	void OnCollisionEnter (Collision col)
     {
 		transform.position += transform.forward*-.05f;
-        rigidbody.isKinematic = true;
+		if (stickToWalls){
+        	rigidbody.isKinematic = true;
+		}
     }
 	
 }

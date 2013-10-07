@@ -7,6 +7,8 @@ public class SoundOrb : MonoBehaviour {
 	
 	public float decayRate;
 	public float dieThreshold;
+
+	public float age = 1;	
 	
 	// Use this for initialization
 	void Start () {

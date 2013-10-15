@@ -10,14 +10,21 @@ public class InteractiveItem : MonoBehaviour {
 	
 	//public soundthing soundToMake
 	
+	public List<GameObject> objectsIntersecting;
+	
 	private List<GameObject> soundsToNotRepeat;
 	
 	// Use this for initialization
 	void Start () {
 		soundsToNotRepeat = new List<GameObject>();
+		objectsIntersecting = new List<GameObject>();
 	}
 	
 	void OnCollisionEnter (Collision col){
+		
+		
+		objectsIntersecting.Add(col.transform.gameObject);
+		
 		GameObject target = col.transform.gameObject;
 		InteractiveItem interactiveComponent = target.GetComponent<InteractiveItem>();
 		NoninteractiveItem noninteractiveComponent = target.GetComponent<NoninteractiveItem>();
@@ -40,10 +47,16 @@ public class InteractiveItem : MonoBehaviour {
 			//now play soundToMake scaled to intensity
 		}
     }	
+
+	void OnCollisionExit (Collision col){
+		objectsIntersecting.Remove(col.transform.gameObject);
+	}	
 	
 	void makeSound (float intensity, Vector3 location){
 		//this approach will almost definitely change
-		soundOrb.GetComponent<SoundOrb>().intensity = intensity;		
-		GameObject sound = (GameObject)Instantiate(soundOrb, location, transform.rotation);		
+		if (intensity > 0){
+			soundOrb.GetComponent<SoundOrb>().intensity = intensity;		
+			GameObject sound = (GameObject)Instantiate(soundOrb, location, transform.rotation);		
+		}
 	}
 }

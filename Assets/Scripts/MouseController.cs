@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MouseController : MonoBehaviour {
 	
+	public GameObject gui;
+	public MouseLook mouseLook1;
+	public MouseLook mouseLook2;
+	public GUIText promptText;
 	public GameObject aimingOrb;
 	public GameObject holder;
 	public GameObject cam;
+	
+	public Texture2D borderTexture;
+	private Rect borderPos;
 	
 	public Texture2D crosshairTexture;
 	public float minCrosshairSize;
@@ -15,6 +23,7 @@ public class MouseController : MonoBehaviour {
 	public float holdingDistance;
 	
 	private Rect defaultCursorPos;	
+	private Rect promptPos;	
 	
 	private bool isCharging = false;
 	private enum holdStates { NOTHOLDING = 0, GRABBING = 1, HOLDING = 2, CHARGING = 3 }
@@ -24,21 +33,66 @@ public class MouseController : MonoBehaviour {
 	private AimingOrb aimingOrbInfo;
 	private Holder holderInfo;
 	
+	private int screen = 1;
+	
+	public List<string> prompts;
+	
+	private bool isPaused = false;
+	
+	private int ignorePlayerMask = ~( 1 << 8);
+	
 	// Use this for initialization
 	void Start () {
 		Screen.showCursor = false;
+		Screen.lockCursor = true;
+		borderPos = new Rect(0, 0, Screen.width, Screen.height);
 		defaultCursorPos = new Rect((Screen.width - minCrosshairSize)/2, ((Screen.height - minCrosshairSize)/2), minCrosshairSize, minCrosshairSize);
 		
 		aimingOrbInfo = aimingOrb.GetComponent<AimingOrb>();
 		holderInfo = holder.GetComponent<Holder>();
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		LeftMouseChecks (Time.deltaTime);
-		RightMouseChecks (Time.deltaTime);
+		if (!isPaused) {
+			UpdatePrompts();
+			LeftMouseChecks (Time.deltaTime);
+			RightMouseChecks (Time.deltaTime);
+		}
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			if (isPaused) {
+				gui.SetActive(false);
+				mouseLook1.enabled = true;
+				mouseLook2.enabled = true;
+				Time.timeScale = 1.0f;
+				Screen.lockCursor = true;
+				Screen.showCursor = false;
+			} else {
+				gui.SetActive(true);
+				mouseLook1.enabled = false;
+				mouseLook2.enabled = false;
+				Time.timeScale = 0.0f;
+				Screen.lockCursor = false;
+				Screen.showCursor = true;	
+			}
+			isPaused = !isPaused;	
+		}
+		if (Input.GetKeyDown(KeyCode.P)) {
+			Screen.fullScreen = !Screen.fullScreen;	
+		}
 		
+		if (Input.GetKeyDown(KeyCode.O)) {
+			Application.CaptureScreenshot(screen.ToString() + ".png");
+			screen++;
+		}	
+	}
+	
+	void UpdatePrompts(){
+		string msg = "";
+		foreach (string prompt in prompts){
+			msg += prompt + "\n\n";
+		}
+		promptText.text = msg;
 	}
 	
 	void LeftMouseChecks (float deltaTime){
@@ -89,7 +143,7 @@ public class MouseController : MonoBehaviour {
 	void grabTarget(){
 		Ray ray = new Ray(cam.transform.position, cam.transform.forward);
 		RaycastHit hit;
-		if(Physics.Raycast (ray, out hit, grabbingDistance)){
+		if(Physics.Raycast (ray, out hit, grabbingDistance, ignorePlayerMask)){
 			GameObject target = hit.transform.gameObject;
 			if (target.GetComponent<InteractiveItem>() != null){
 				holderInfo.SetTarget(target);
@@ -98,17 +152,22 @@ public class MouseController : MonoBehaviour {
 		}
 	}
 	
-	void OnGUI(){
-		if (isCharging){
-			float currentCrosshairSize = (aimingOrbInfo.GetRatio()*(maxCrosshairSize-minCrosshairSize))+minCrosshairSize;
-			Rect currentCursorPos = new Rect((Screen.width - currentCrosshairSize)/2, ((Screen.height - currentCrosshairSize)/2), currentCrosshairSize, currentCrosshairSize);
-			GUI.DrawTexture(currentCursorPos, crosshairTexture);
-		}else if (holdState == holdStates.CHARGING){
-			float currentCrosshairSize = (holderInfo.GetRatio()*(maxCrosshairSize-minCrosshairSize))+minCrosshairSize;
-			Rect currentCursorPos = new Rect((Screen.width - currentCrosshairSize)/2, ((Screen.height - currentCrosshairSize)/2), currentCrosshairSize, currentCrosshairSize);
-			GUI.DrawTexture(currentCursorPos, crosshairTexture);	
-		}else{
-			GUI.DrawTexture(defaultCursorPos, crosshairTexture);
+	void OnGUI(){		
+		GUI.color = new Color(1f , 1f, 1f, .1f);
+		GUI.DrawTexture(borderPos, borderTexture);
+		
+		if (crosshairTexture != null) {
+			if (isCharging){
+				float currentCrosshairSize = (aimingOrbInfo.GetRatio()*(maxCrosshairSize-minCrosshairSize))+minCrosshairSize;
+				Rect currentCursorPos = new Rect((Screen.width - currentCrosshairSize)/2, ((Screen.height - currentCrosshairSize)/2), currentCrosshairSize, currentCrosshairSize);
+				GUI.DrawTexture(currentCursorPos, crosshairTexture);
+			}else if (holdState == holdStates.CHARGING){
+				float currentCrosshairSize = (holderInfo.GetRatio()*(maxCrosshairSize-minCrosshairSize))+minCrosshairSize;
+				Rect currentCursorPos = new Rect((Screen.width - currentCrosshairSize)/2, ((Screen.height - currentCrosshairSize)/2), currentCrosshairSize, currentCrosshairSize);
+				GUI.DrawTexture(currentCursorPos, crosshairTexture);	
+			}else{
+				GUI.DrawTexture(defaultCursorPos, crosshairTexture);
+			}
 		}
 	}
 }

@@ -16,17 +16,26 @@ public class Holder : MonoBehaviour {
 	public float minSpeed;
 	public float maxSpeed;	
 	
+	private GameObject player;
+	
 	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	public void SetTarget(GameObject target_){
 		target = target_;	
 		target.rigidbody.isKinematic = true;
+		//target.collider.enabled = false;
+		//target.rigidbody.useGravity = false;
+		Physics.IgnoreCollision(player.collider, target.collider, true);
+		//target.transform.position = transform.position;
+		//target.transform.parent = transform;
+		//target.transform.position = transform.position;
 	}
 	
 	public void UpdatePosition(){
 		target.transform.position = transform.position;
-	}
+	}	
 	
 	public void Charge (float deltaTime){
 		power += chargeRate*deltaTime;
@@ -44,7 +53,8 @@ public class Holder : MonoBehaviour {
 		power = minPower;
 	}	
 	
-	public void FireShot (){
+	public void FireShot (){		
+		//target.transform.parent = null;
 		target.rigidbody.isKinematic = false;
 		float ratio = power/maxPower;	
 		float speed = ratio*(maxSpeed-minSpeed)+minSpeed;	
@@ -52,7 +62,10 @@ public class Holder : MonoBehaviour {
 			speed = 0;	
 		}
 		target.rigidbody.AddForce(cam.transform.forward*speed);
+		Physics.IgnoreCollision(player.collider, target.collider, false);
 		target = null;
+		
 	}
 	
 }
+

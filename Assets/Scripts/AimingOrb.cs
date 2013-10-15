@@ -22,9 +22,11 @@ public class AimingOrb : MonoBehaviour {
 	public float maxSpeed;	
 	
 	void Start () {
+
 		gameObject.SetActive(false);
 		Vector3 orbSize = new Vector3(bulletResizeRatio, bulletResizeRatio, bulletResizeRatio);
 		transform.localScale = orbSize;
+		
 	}
 	
 	public void Charge (float deltaTime){

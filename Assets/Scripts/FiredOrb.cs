@@ -4,6 +4,7 @@ using System.Collections;
 public class FiredOrb : MonoBehaviour {
 	
 	public GameObject orbLight;
+	public GameObject shockWave;
 	
 	public float size;
 	public float speed;
@@ -20,11 +21,11 @@ public class FiredOrb : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").collider, this.collider, true);
 		Vector3 orbSize = new Vector3(size, size, size);
 		transform.localScale = orbSize;
 		orbLight.light.intensity = intensity;
 		orbLight.light.range = range;
-		
 		rigidbody.AddForce(transform.forward*speed);
 	}
 	
@@ -44,9 +45,13 @@ public class FiredOrb : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision col)
     {
-		transform.position += transform.forward*-.05f;
+		
+		//Instantiate(shockWave, transform.position, transform.rotation);
+		
 		if (stickToWalls){
-        	rigidbody.isKinematic = true;
+			transform.position += transform.forward*-.05f;
+			rigidbody.isKinematic = true;
+		}else{
 		}
     }
 	

@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: dae1729718f60124fababdb9b1b3833e
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: polySurface1
+    100002: stoolChair:group
+    100004: stoolChair:group1
+    100006: stoolChair:group10
+    100008: stoolChair:group2
+    100010: stoolChair:group3
+    100012: stoolChair:group4
+    100014: stoolChair:group5
+    100016: stoolChair:group6
+    100018: stoolChair:group7
+    100020: stoolChair:group8
+    100022: stoolChair:group9
+    100024: stoolChair:pasted__group1
+    100026: stoolChair:pasted__group1 1
+    100028: stoolChair:pasted__group1 2
+    100030: stoolChair:pasted__group2
+    100032: stoolChair:pasted__pasted__group1
+    100034: stoolChair:pasted__pasted__pasted__pCylinder3
+    100036: stoolChair:pasted__pasted__pCylinder3
+    100038: stoolChair:pasted__pasted__pCylinder3 1
+    100040: stoolChair:pasted__pasted__pCylinder3 2
+    100042: stoolChair:pasted__pCylinder2
+    100044: stoolChair:pasted__pCylinder3
+    100046: stoolChair:pasted__pCylinder4
+    100048: stoolChair:pasted__pCylinder4 1
+    100050: stoolChair:pasted__pCylinder4 2
+    100052: stoolChair:pasted__pCylinder4 3
+    100054: stoolChair:pasted__pCylinder4 4
+    100056: stoolChair:pasted__pCylinder5
+    100058: stoolChair:pCylinder1
+    100060: stoolChair:pCylinder2
+    100062: stoolChair:pCylinder3
+    100064: stoolChair:pCylinder4
+    100066: stoolChair:pCylinder5
+    100068: transform1
+    100070: transform10
+    100072: transform11
+    100074: transform12
+    100076: transform13
+    100078: transform14
+    100080: transform15
+    100082: transform16
+    100084: transform17
+    100086: transform2
+    100088: transform3
+    100090: transform4
+    100092: transform5
+    100094: transform6
+    100096: transform7
+    100098: transform8
+    100100: transform9
+    100102: //RootNode
+    400000: polySurface1
+    400002: stoolChair:group
+    400004: stoolChair:group1
+    400006: stoolChair:group10
+    400008: stoolChair:group2
+    400010: stoolChair:group3
+    400012: stoolChair:group4
+    400014: stoolChair:group5
+    400016: stoolChair:group6
+    400018: stoolChair:group7
+    400020: stoolChair:group8
+    400022: stoolChair:group9
+    400024: stoolChair:pasted__group1
+    400026: stoolChair:pasted__group1 1
+    400028: stoolChair:pasted__group1 2
+    400030: stoolChair:pasted__group2
+    400032: stoolChair:pasted__pasted__group1
+    400034: stoolChair:pasted__pasted__pasted__pCylinder3
+    400036: stoolChair:pasted__pasted__pCylinder3
+    400038: stoolChair:pasted__pasted__pCylinder3 1
+    400040: stoolChair:pasted__pasted__pCylinder3 2
+    400042: stoolChair:pasted__pCylinder2
+    400044: stoolChair:pasted__pCylinder3
+    400046: stoolChair:pasted__pCylinder4
+    400048: stoolChair:pasted__pCylinder4 1
+    400050: stoolChair:pasted__pCylinder4 2
+    400052: stoolChair:pasted__pCylinder4 3
+    400054: stoolChair:pasted__pCylinder4 4
+    400056: stoolChair:pasted__pCylinder5
+    400058: stoolChair:pCylinder1
+    400060: stoolChair:pCylinder2
+    400062: stoolChair:pCylinder3
+    400064: stoolChair:pCylinder4
+    400066: stoolChair:pCylinder5
+    400068: transform1
+    400070: transform10
+    400072: transform11
+    400074: transform12
+    400076: transform13
+    400078: transform14
+    400080: transform15
+    400082: transform16
+    400084: transform17
+    400086: transform2
+    400088: transform3
+    400090: transform4
+    400092: transform5
+    400094: transform6
+    400096: transform7
+    400098: transform8
+    400100: transform9
+    400102: //RootNode
+    2300000: polySurface1
+    3300000: polySurface1
+    4300000: polySurface1
+    6400000: polySurface1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 

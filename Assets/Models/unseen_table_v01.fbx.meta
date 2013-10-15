@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 52c82d5b8f807e140967c87030bc454d
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: polySurface2
+    100002: table:group
+    100004: table:group1
+    100006: table:group2
+    100008: table:group3
+    100010: table:group4
+    100012: table:group5
+    100014: table:group6
+    100016: table:group7
+    100018: table:pasted__group1
+    100020: table:pasted__group1 1
+    100022: table:pasted__group3
+    100024: table:pasted__group3 1
+    100026: table:pasted__group3 2
+    100028: table:pasted__pasted__group1
+    100030: table:pasted__pasted__group1 1
+    100032: table:pasted__pasted__group1 2
+    100034: table:pasted__pasted__pasted__pCube2
+    100036: table:pasted__pasted__pasted__pCube2 1
+    100038: table:pasted__pasted__pasted__pCube2 2
+    100040: table:pasted__pasted__pCube2
+    100042: table:pasted__pasted__pCube2 1
+    100044: table:pasted__pCube1
+    100046: table:pasted__pCube2
+    100048: table:pasted__pCube2 1
+    100050: table:pCube1
+    100052: table:pCube2
+    100054: transform18
+    100056: transform19
+    100058: transform20
+    100060: transform21
+    100062: transform22
+    100064: transform23
+    100066: transform24
+    100068: transform25
+    100070: transform26
+    100072: transform27
+    100074: //RootNode
+    400000: polySurface2
+    400002: table:group
+    400004: table:group1
+    400006: table:group2
+    400008: table:group3
+    400010: table:group4
+    400012: table:group5
+    400014: table:group6
+    400016: table:group7
+    400018: table:pasted__group1
+    400020: table:pasted__group1 1
+    400022: table:pasted__group3
+    400024: table:pasted__group3 1
+    400026: table:pasted__group3 2
+    400028: table:pasted__pasted__group1
+    400030: table:pasted__pasted__group1 1
+    400032: table:pasted__pasted__group1 2
+    400034: table:pasted__pasted__pasted__pCube2
+    400036: table:pasted__pasted__pasted__pCube2 1
+    400038: table:pasted__pasted__pasted__pCube2 2
+    400040: table:pasted__pasted__pCube2
+    400042: table:pasted__pasted__pCube2 1
+    400044: table:pasted__pCube1
+    400046: table:pasted__pCube2
+    400048: table:pasted__pCube2 1
+    400050: table:pCube1
+    400052: table:pCube2
+    400054: transform18
+    400056: transform19
+    400058: transform20
+    400060: transform21
+    400062: transform22
+    400064: transform23
+    400066: transform24
+    400068: transform25
+    400070: transform26
+    400072: transform27
+    400074: //RootNode
+    2300000: polySurface2
+    3300000: polySurface2
+    4300000: polySurface2
+    6400000: polySurface2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 

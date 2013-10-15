@@ -154,7 +154,7 @@ public class MouseController : MonoBehaviour {
 	
 	void OnGUI(){		
 		GUI.color = new Color(1f , 1f, 1f, .1f);
-		GUI.DrawTexture(borderPos, borderTexture);
+		//GUI.DrawTexture(borderPos, borderTexture);
 		
 		if (crosshairTexture != null) {
 			if (isCharging){

@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 1b872e266cc754f46b009555d955dae6
+guid: 120ddc2a9c2797b499f0e8fcc9b0be69
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: //RootNode
-    400000: pCube1
-    400002: pCube2
-    400004: //RootNode
-    2300000: pCube1
-    2300002: pCube2
-    3300000: pCube1
-    3300002: pCube2
-    4300000: pCube1
-    4300002: pCube2
-    6400000: pCube1
-    6400002: pCube2
+    100000: pasted__pCube5
+    100002: //RootNode
+    400000: pasted__pCube5
+    400002: //RootNode
+    2300000: pasted__pCube5
+    3300000: pasted__pCube5
+    4300000: pasted__pCube5
+    6400000: pasted__pCube5
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -34,7 +28,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .5
     meshCompression: 0
     addColliders: 1
     importBlendShapes: 1
@@ -52,7 +46,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 1
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
@@ -68,5 +62,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 0
+  animationType: 2
   userData: 

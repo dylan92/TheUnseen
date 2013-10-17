@@ -12,7 +12,7 @@ public class MouseController : MonoBehaviour {
 	public GameObject holder;
 	public GameObject cam;
 	
-	public Texture2D borderTexture;
+	public GUITexture borderTexture;
 	private Rect borderPos;
 	
 	public Texture2D crosshairTexture;
@@ -41,6 +41,11 @@ public class MouseController : MonoBehaviour {
 	
 	private int ignorePlayerMask = ~( 1 << 8);
 	
+	public int maxHealth;
+	public float playerHealth;
+	public int recoverRate;
+
+	
 	// Use this for initialization
 	void Start () {
 		Screen.showCursor = false;
@@ -58,6 +63,9 @@ public class MouseController : MonoBehaviour {
 			UpdatePrompts();
 			LeftMouseChecks (Time.deltaTime);
 			RightMouseChecks (Time.deltaTime);
+			//if(playerHealth < maxHealth) {
+			//	playerHealth += recoverRate*Time.deltaTime;
+			//}
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			if (isPaused) {
@@ -152,8 +160,30 @@ public class MouseController : MonoBehaviour {
 		}
 	}
 	
+	public IEnumerator TakeDamage(int dmg) {
+		if(playerHealth > 0) {
+			playerHealth -= dmg;
+		} else {
+			Die ();	
+		}
+		borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+		float t = Time.time;
+		float amt = 0.05f;
+		while (Time.time - t < 1.0f) {
+			borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.5f - amt);
+			yield return new WaitForSeconds(0.1f);
+			amt += 0.05f;
+		}
+		borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+		
+	}
+	
+	public void Die() {
+		Application.LoadLevel(Application.loadedLevel);
+	}
+	
 	void OnGUI(){		
-		GUI.color = new Color(1f , 1f, 1f, .1f);
+		GUI.color = new Color(1f , 1f, 1f, playerHealth/maxHealth);
 		//GUI.DrawTexture(borderPos, borderTexture);
 		
 		if (crosshairTexture != null) {

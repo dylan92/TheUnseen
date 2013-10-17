@@ -78,8 +78,10 @@ public class UI : MonoBehaviour {
 	// Received input from checkbox
 	void Message(string msg) {
 		if (msg == "Checked") {
+			firedOrb.rigidbody.useGravity = true;
 			// do stuff with rigidbody on firedOrb / sticking to walls	
 		} else if (msg == "Unchecked") {
+			firedOrb.rigidbody.useGravity = false;
 			// do stuff with rigidbody on firedOrb / sticking to walls		
 		}
 	}

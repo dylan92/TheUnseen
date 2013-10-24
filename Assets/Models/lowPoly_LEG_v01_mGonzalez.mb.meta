@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: ab7d5fd72f09d374696d92154583c65a
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: group
+    100002: group1
+    100004: group2
+    100006: group3
+    100008: imagePlane1
+    100010: imagePlane2
+    100012: imagePlane3
+    100014: //RootNode
+    100016: pasted__group
+    100018: pasted__group 1
+    100020: pasted__group1
+    100022: pasted__pasted__group
+    100024: pasted__pasted__pasted__pCube2
+    100026: pasted__pasted__pCube2
+    100028: pasted__pasted__pCube2 1
+    100030: pasted__pasted__pCube2 2
+    100032: pasted__pasted__polySurface2
+    100034: pasted__pasted__transform3
+    100036: pasted__pasted__transform4
+    100038: pasted__pCube2
+    100040: pasted__pCube2 1
+    100042: pasted__pCube2 2
+    100044: pasted__polySurface2
+    100046: pasted__polySurface2 1
+    100048: pasted__transform3
+    100050: pasted__transform3 1
+    100052: pasted__transform4
+    100054: pasted__transform4 1
+    100056: pCube1
+    100058: pCube2
+    100060: pCylinder1
+    100062: polySurface1
+    100064: polySurface2
+    100066: transform1
+    100068: transform2
+    100070: transform3
+    100072: transform4
+    400000: group
+    400002: group1
+    400004: group2
+    400006: group3
+    400008: imagePlane1
+    400010: imagePlane2
+    400012: imagePlane3
+    400014: //RootNode
+    400016: pasted__group
+    400018: pasted__group 1
+    400020: pasted__group1
+    400022: pasted__pasted__group
+    400024: pasted__pasted__pasted__pCube2
+    400026: pasted__pasted__pCube2
+    400028: pasted__pasted__pCube2 1
+    400030: pasted__pasted__pCube2 2
+    400032: pasted__pasted__polySurface2
+    400034: pasted__pasted__transform3
+    400036: pasted__pasted__transform4
+    400038: pasted__pCube2
+    400040: pasted__pCube2 1
+    400042: pasted__pCube2 2
+    400044: pasted__polySurface2
+    400046: pasted__polySurface2 1
+    400048: pasted__transform3
+    400050: pasted__transform3 1
+    400052: pasted__transform4
+    400054: pasted__transform4 1
+    400056: pCube1
+    400058: pCube2
+    400060: pCylinder1
+    400062: polySurface1
+    400064: polySurface2
+    400066: transform1
+    400068: transform2
+    400070: transform3
+    400072: transform4
+    2300000: pasted__pasted__polySurface2
+    2300002: pasted__polySurface2
+    2300004: pasted__polySurface2 1
+    2300006: polySurface1
+    2300008: polySurface2
+    3300000: pasted__pasted__polySurface2
+    3300002: pasted__polySurface2
+    3300004: pasted__polySurface2 1
+    3300006: polySurface1
+    3300008: polySurface2
+    4300000: polySurface1
+    4300002: polySurface2
+    4300004: pasted__polySurface2
+    4300006: pasted__polySurface2
+    4300008: pasted__pasted__polySurface2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 

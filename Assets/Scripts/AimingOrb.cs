@@ -10,9 +10,9 @@ public class AimingOrb : MonoBehaviour {
 	public GameObject chargeLight;
 	
 	public float chargeRate;
-	public float minPower;
-	public float maxPower;
-
+	private float minPower = 1;
+	private float maxPower = 3;
+	
 	public float bulletResizeRatio;
 	public float minIntensity;
 	public float minRange;
@@ -30,7 +30,7 @@ public class AimingOrb : MonoBehaviour {
 	}
 	
 	public void Charge (float deltaTime){
-		power += chargeRate*deltaTime;
+		power += (chargeRate/100)*(maxPower-minPower)*deltaTime;
 		if (power > maxPower){
 			power = maxPower;
 		}

@@ -47,7 +47,7 @@ public class FiredOrb : MonoBehaviour {
     {
 		
 		//Instantiate(shockWave, transform.position, transform.rotation);
-		
+				
 		if (stickToWalls){
 			transform.position += transform.forward*-.05f;
 			rigidbody.isKinematic = true;

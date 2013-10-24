@@ -6,15 +6,13 @@ public class LightTracker : MonoBehaviour {
 	public float lightIntensityWeight;
 	public float soundIntensityWeight;
 
-	public float speed;
-	public float minDistance;
 	public float ageFactor;
 	
-	public NavMeshAgent navigator;
+	private EnemyMover mover;
 	
 	// Use this for initialization
 	void Start () {
-	
+		mover = gameObject.GetComponent<EnemyMover>();
 	}
 	
 	// Update is called once per frame
@@ -45,20 +43,14 @@ public class LightTracker : MonoBehaviour {
 				target.GetComponent<FiredOrb>().age += ageFactor*Time.deltaTime;
 			}
 			
-			if (Vector3.Distance (transform.position, target.transform.position) > minDistance){
-				if (navigator == null) {
-					transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed*Time.deltaTime);
-				} else {
-					navigator.destination = target.transform.position;
-				}
-			}
+			mover.UpdateTarget(target);
 		}
 	}
 	
 	double CalculateAttraction(GameObject orb){
 		double dist = Vector3.Distance (transform.position, orb.transform.position);
-		if (dist < minDistance){
-			dist = minDistance;
+		if (dist < mover.minDistance){
+			dist = mover.minDistance;
 		}
 		
 		if (orb.GetComponent<SoundOrb>() != null){

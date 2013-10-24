@@ -1,19 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MouseController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SkyBoxGenerator.js">
     <Files>
-      <File FileName="Assets\Scripts\MouseController.cs" Line="184" Column="2" />
-      <File FileName="Assets\Scripts\ControlUnit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ActivateWhenItemApproaches.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LightTracker.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FiredOrb.cs" Line="1" Column="1" />
-      <File FileName="Assets\UltimateFPS\Scripts\Presets\Standard\Controller\ControllerRun.txt" Line="1" Column="1" />
-      <File FileName="Assets\UltimateFPS\Scripts\Gameplay\World\Interaction\vp_Grab.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AimingOrb.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SoundOrb.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Door.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyDamage.cs" Line="21" Column="43" />
+      <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPController.cs" Line="1" Column="1" />
+      <File FileName="Assets\UltimateFPS\Scripts\Gameplay\Surfaces\FootstepManager\vp_FootstepManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MouseController.cs" Line="77" Column="22" />
+      <File FileName="Assets\Scripts\CharacterMover.js" Line="86" Column="12" />
+      <File FileName="Assets\Scripts\FiredOrb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ControlUnit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SkyBoxGenerator.js" Line="69" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

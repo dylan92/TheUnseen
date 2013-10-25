@@ -31,6 +31,7 @@ public class ControlUnit : MonoBehaviour {
 			if (chargeOrb.tag == "firedOrb"){
 				float chargePower = chargeOrb.GetComponent<FiredOrb>().intensity*chargeRatio;
 				power += chargePower;
+				this.light.color = new Color(1.0f - ((power / maxPower) / 2), (power / maxPower), 0.0f, 0.0f);
 				if (power >= maxPower){
 					power = maxPower;
 					target.GetComponent<Activateable>().Activate();

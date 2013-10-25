@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\EnemyDamage.cs" />
      <Compile Include="Assets\Scripts\EnemyMover.cs" />
+     <Compile Include="Assets\Scripts\EnergyPickup.cs" />
      <Compile Include="Assets\Scripts\FiredOrb.cs" />
      <Compile Include="Assets\Scripts\Holder.cs" />
      <Compile Include="Assets\Scripts\InteractiveItem.cs" />

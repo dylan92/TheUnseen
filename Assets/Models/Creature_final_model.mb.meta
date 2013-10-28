@@ -1,22 +1,23 @@
 fileFormatVersion: 2
-guid: 84641af1422de094d92860300f5cd2cf
+guid: d3560bcdc1fe41846b5335a72ba77094
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: mesh0%root%0%
-    100002: mesh0%root%1%
-    100004: //RootNode
-    400000: mesh0%root%0%
-    400002: mesh0%root%1%
-    400004: //RootNode
-    2300000: mesh0%root%0%
-    2300002: mesh0%root%1%
-    3300000: mesh0%root%0%
-    3300002: mesh0%root%1%
-    4300000: mesh0%root%0%
-    4300002: mesh0%root%1%
-    6400000: mesh0%root%0%
-    6400002: mesh0%root%1%
+    100000: Backdrop Item
+    100002: 'Backdrop Item '
+    100004: Backdrop Item  1
+    100006: //RootNode
+    100008: Mesh
+    100010: Texture Group
+    400000: Backdrop Item
+    400002: 'Backdrop Item '
+    400004: Backdrop Item  1
+    400006: //RootNode
+    400008: Mesh
+    400010: Texture Group
+    2300000: Mesh
+    3300000: Mesh
+    4300000: Mesh
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -34,9 +35,9 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .00449999981
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -68,5 +69,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   additionalBone: 1
-  animationType: 2
+  animationType: 0
   userData: 

@@ -4,6 +4,7 @@ using Pathfinding;
 
 public class Door : Activateable {
 	
+	public bool isOpen = false;
 	public GameObject topDoor;
 	public GameObject bottomDoor;
 	
@@ -31,6 +32,7 @@ public class Door : Activateable {
 	}
 	
 	IEnumerator OpenDoor(){
+		isOpen = true;
 		while (timeOpening < timeToOpen){
 			timeOpening += timeInterval;
 			topDoor.transform.position = Vector3.Lerp (originalTop, goalTop, timeOpening/timeToOpen);

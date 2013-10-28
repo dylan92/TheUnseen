@@ -14,10 +14,12 @@ public class AimingOrb : MonoBehaviour {
 	public GameObject chargeLight;
 	
 	public float chargeRate;
+	public float drainRate;
 	private float minPower = 1;
 	private float maxPower = 3;
 	
-	public float bulletResizeRatio;
+	public float bulletScaleMax;
+	public float bulletScaleMin;
 	public float minIntensity;
 	public float minRange;
 	public float minSpeed;
@@ -28,8 +30,8 @@ public class AimingOrb : MonoBehaviour {
 	void Start () {
 
 		gameObject.SetActive(false);
-		Vector3 orbSize = new Vector3(bulletResizeRatio, bulletResizeRatio, bulletResizeRatio);
-		transform.localScale = orbSize;
+		Vector3 orbSize = new Vector3(0, 0, 0);
+		transform.localScale = new Vector3(0, 0, 0);
 		
 	}
 	
@@ -42,7 +44,7 @@ public class AimingOrb : MonoBehaviour {
 			}
 		}
 		else if (power > energy && energy > 0.0f) {
-			power -= (chargeRate/100)*(maxPower-minPower)*deltaTime;
+			power -= (drainRate/100)*(maxPower-minPower)*deltaTime;
 			energy -= deltaTime;
 		}
 		UpdateOrb();
@@ -57,6 +59,11 @@ public class AimingOrb : MonoBehaviour {
 			float ratio = power/maxPower;
 			chargeLight.light.intensity = ratio*(maxIntensity-minIntensity)+minIntensity;
 			chargeLight.light.range = ratio*(maxRange-minRange)+minRange;
+			
+			float orbScale = ratio*(bulletScaleMax-bulletScaleMin)+bulletScaleMin;
+			Vector3 orbSize = new Vector3(orbScale, orbScale, orbScale);
+			transform.localScale = orbSize;
+			
 		} else {
 			gameObject.SetActive(false);	
 		}
@@ -78,7 +85,7 @@ public class AimingOrb : MonoBehaviour {
 			energy -= power;
 			gameObject.SetActive(false);
 			float ratio = power/maxPower;		
-			shootingOrb.GetComponent<FiredOrb>().size = bulletResizeRatio;
+			shootingOrb.GetComponent<FiredOrb>().sizeScale = ratio*(bulletScaleMax-bulletScaleMin)+bulletScaleMin;
 			shootingOrb.GetComponent<FiredOrb>().intensity = ratio*(maxIntensity-minIntensity)+minIntensity;		
 			shootingOrb.GetComponent<FiredOrb>().range = ratio*(maxRange-minRange)+minRange;	
 			shootingOrb.GetComponent<FiredOrb>().speed = ratio*(maxSpeed-minSpeed)+minSpeed;

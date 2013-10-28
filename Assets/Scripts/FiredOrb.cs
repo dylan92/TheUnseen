@@ -6,7 +6,7 @@ public class FiredOrb : MonoBehaviour {
 	public GameObject orbLight;
 	public GameObject shockWave;
 	
-	public float size;
+	public float sizeScale;
 	public float speed;
 	public float intensity;
 	public float range;
@@ -22,7 +22,7 @@ public class FiredOrb : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Physics.IgnoreCollision(GameObject.FindGameObjectWithTag("Player").collider, this.collider, true);
-		Vector3 orbSize = new Vector3(size, size, size);
+		Vector3 orbSize = new Vector3(sizeScale, sizeScale, sizeScale);
 		transform.localScale = orbSize;
 		orbLight.light.intensity = intensity;
 		orbLight.light.range = range;

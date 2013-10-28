@@ -66,10 +66,10 @@ public class EnemyMover : MonoBehaviour {
 		
 		rigidbody.velocity = Vector3.zero;
 		
-		if (target != null && (target.transform.position-targetPosition).magnitude > minDistance) {	
-			targetPosition = target.transform.position;
+		if (target != null && (target.transform.position-targetPosition).magnitude > minDistance) {
+			targetPosition = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
 			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
-		}		
+		}				
 		
 		if (path == null) {
             return;
@@ -113,6 +113,7 @@ public class EnemyMover : MonoBehaviour {
 		if (target != _target){
 			target = _target;	
 			targetPosition = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
+			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
 		}
 	}
 }

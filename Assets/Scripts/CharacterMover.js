@@ -203,20 +203,39 @@ private var tr : Transform;
 
 private var controller : CharacterController;
 
-private var standHeight : float;
+public var playerCamera : GameObject;
+public var crouchSpeed : float;
+public var crouchDrop : float;
 private var crouchHeight : float;
-private var standCenter : Vector3;
-private var crouchCenter : Vector3;
+private var standHeight : float;
 
 function Awake () {
 	controller = GetComponent (CharacterController);
 	tr = transform;
+	
+	standHeight = playerCamera.transform.position.y;
+	crouchHeight = standHeight-crouchDrop;
+	
 }
 
 function CrouchCharacter() {
+	if (playerCamera.transform.position.y > crouchHeight){
+		playerCamera.transform.position.y -= crouchSpeed*Time.deltaTime;
+	}
+	if (playerCamera.transform.position.y < crouchHeight){
+		playerCamera.transform.position.y = crouchHeight;
+	}
+	
+	
 }
 
 function StandCharacter() {
+	if (playerCamera.transform.position.y < standHeight){
+		playerCamera.transform.position.y += crouchSpeed*Time.deltaTime;
+	}
+	if (playerCamera.transform.position.y > standHeight){
+		playerCamera.transform.position.y = standHeight;
+	}
 }
 
 private function UpdateFunction () {

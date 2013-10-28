@@ -14,6 +14,7 @@ ModelImporter:
     2300000: pasted__pasted__pasted__pCube5
     3300000: pasted__pasted__pasted__pCube5
     4300000: pasted__pasted__pasted__pCube5
+    6400000: pasted__pasted__pasted__pCube5
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -33,7 +34,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -47,7 +48,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0

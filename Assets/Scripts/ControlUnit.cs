@@ -12,7 +12,7 @@ public class ControlUnit : MonoBehaviour {
 	public float chargeRatio;
 	private float power = 0;
 	
-	public GameObject target;
+	public Door target;
 	
 	// Use this for initialization
 	void Start () {
@@ -23,6 +23,11 @@ public class ControlUnit : MonoBehaviour {
 	void Update () {
 		this.light.intensity = (power/maxPower)*maxIntensity;
 		this.light.range = ((power/maxPower)*(maxRange-minRange))+minRange;
+		
+		if (target.isOpen) {
+			greenOrb.SetActive(true);	
+			this.gameObject.SetActive(false);
+		}
 	}
 
 	void OnTriggerEnter (Collider other) {
@@ -31,10 +36,10 @@ public class ControlUnit : MonoBehaviour {
 			if (chargeOrb.tag == "firedOrb"){
 				float chargePower = chargeOrb.GetComponent<FiredOrb>().intensity*chargeRatio;
 				power += chargePower;
-				this.light.color = new Color(1.0f - ((power / maxPower) / 2), (power / maxPower), 0.0f, 0.0f);
+				this.light.color = new Color(1.0f - ((power / maxPower) / 2), ((power / maxPower) / 2), 0.0f, 0.0f);
 				if (power >= maxPower){
 					power = maxPower;
-					target.GetComponent<Activateable>().Activate();
+					target.Activate();
 					greenOrb.SetActive(true);
 					this.gameObject.SetActive(false);
 				}

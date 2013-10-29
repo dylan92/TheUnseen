@@ -61,6 +61,20 @@ ModelImporter:
     100110: polySurface5
     100112: pPipe1
     100114: transform1
+    100116: curve2
+    100118: curve3
+    100120: group10
+    100122: group7
+    100124: group8
+    100126: group9
+    100128: pCylinder11
+    100130: pCylinder11 1
+    100132: pCylinder11 2
+    100134: pCylinder11 3
+    100136: pCylinder13
+    100138: pCylinder13 1
+    100140: pCylinder13 2
+    100142: pCylinder13 3
     400000: curve1
     400002: curve1 1
     400004: curve1 2
@@ -119,6 +133,20 @@ ModelImporter:
     400110: polySurface5
     400112: pPipe1
     400114: transform1
+    400116: curve2
+    400118: curve3
+    400120: group10
+    400122: group7
+    400124: group8
+    400126: group9
+    400128: pCylinder11
+    400130: pCylinder11 1
+    400132: pCylinder11 2
+    400134: pCylinder11 3
+    400136: pCylinder13
+    400138: pCylinder13 1
+    400140: pCylinder13 2
+    400142: pCylinder13 3
     2300000: pasted__pCylinder12
     2300002: pasted__pCylinder12 1
     2300004: pasted__pCylinder12 2
@@ -155,6 +183,14 @@ ModelImporter:
     2300066: polySurface4
     2300068: polySurface5
     2300070: pPipe1
+    2300072: pCylinder11
+    2300074: pCylinder11 1
+    2300076: pCylinder11 2
+    2300078: pCylinder11 3
+    2300080: pCylinder13
+    2300082: pCylinder13 1
+    2300084: pCylinder13 2
+    2300086: pCylinder13 3
     3300000: pasted__pCylinder12
     3300002: pasted__pCylinder12 1
     3300004: pasted__pCylinder12 2
@@ -191,6 +227,14 @@ ModelImporter:
     3300066: polySurface4
     3300068: polySurface5
     3300070: pPipe1
+    3300072: pCylinder11
+    3300074: pCylinder11 1
+    3300076: pCylinder11 2
+    3300078: pCylinder11 3
+    3300080: pCylinder13
+    3300082: pCylinder13 1
+    3300084: pCylinder13 2
+    3300086: pCylinder13 3
     4300000: polySurface1
     4300002: polySurface2
     4300004: pCylinder1
@@ -227,6 +271,14 @@ ModelImporter:
     4300066: polySurface3
     4300068: polySurface4
     4300070: polySurface5
+    4300072: pCylinder13
+    4300074: pCylinder11
+    4300076: pCylinder13
+    4300078: pCylinder11
+    4300080: pCylinder13
+    4300082: pCylinder11
+    4300084: pCylinder13
+    4300086: pCylinder11
     6400000: pasted__pCylinder12
     6400002: pasted__pCylinder12 1
     6400004: pasted__pCylinder12 2
@@ -263,6 +315,14 @@ ModelImporter:
     6400066: polySurface4
     6400068: polySurface5
     6400070: pPipe1
+    6400072: pCylinder11
+    6400074: pCylinder11 1
+    6400076: pCylinder11 2
+    6400078: pCylinder11 3
+    6400080: pCylinder13
+    6400082: pCylinder13 1
+    6400084: pCylinder13 2
+    6400086: pCylinder13 3
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -48,6 +48,8 @@
      <Compile Include="Assets\Scripts\ActivateWhenItemApproaches.cs" />
      <Compile Include="Assets\Scripts\Activateable.cs" />
      <Compile Include="Assets\Scripts\AimingOrb.cs" />
+     <Compile Include="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs" />
+     <Compile Include="Assets\Scripts\CameraBobCode\PlayerCameraBobOld.cs" />
      <Compile Include="Assets\Scripts\ControlUnit.cs" />
      <Compile Include="Assets\Scripts\DestroyByTime.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
@@ -55,6 +57,8 @@
      <Compile Include="Assets\Scripts\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\EnergyPickup.cs" />
      <Compile Include="Assets\Scripts\FiredOrb.cs" />
+     <Compile Include="Assets\Scripts\Generator.cs" />
+     <Compile Include="Assets\Scripts\GeneratorPower.cs" />
      <Compile Include="Assets\Scripts\Holder.cs" />
      <Compile Include="Assets\Scripts\InteractiveItem.cs" />
      <Compile Include="Assets\Scripts\LightTracker.cs" />
@@ -65,6 +69,7 @@
      <Compile Include="Assets\Scripts\UI.cs" />
      <Compile Include="Assets\Scripts\flickeringLight.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\Sources\LightningBolt.cs" />
      <Compile Include="Assets\UltimateFPS\Scripts\Core\ComponentSystem\vp_Component.cs" />
      <Compile Include="Assets\UltimateFPS\Scripts\Core\ComponentSystem\vp_ComponentPreset.cs" />
      <Compile Include="Assets\UltimateFPS\Scripts\Core\ComponentSystem\vp_State.cs" />

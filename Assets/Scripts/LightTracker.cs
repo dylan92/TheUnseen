@@ -5,15 +5,24 @@ public class LightTracker : MonoBehaviour {
 	
 	public float lightIntensityWeight;
 	public float soundIntensityWeight;
-
+	
+	public GameObject player;
+	
+	public float playerAttraction = 30;
+	
 	public float ageFactor;
 	public float ageDistance;
+	
+	public float minSoundIntensityRequired;
 	
 	public float focusMax;
 	
 	private EnemyMover mover;
 	
 	private GameObject lastTarget;
+	
+	public LayerMask ignoreEnemyMask;
+	
 	
 	// Use this for initialization
 	void Start () {
@@ -28,28 +37,49 @@ public class LightTracker : MonoBehaviour {
 		GameObject[] firedOrbs = GameObject.FindGameObjectsWithTag("firedOrb");
 		GameObject[] soundOrbs = GameObject.FindGameObjectsWithTag("soundOrb");
 		
-		GameObject[] attractionPoints = new GameObject[firedOrbs.Length + soundOrbs.Length];
-		firedOrbs.CopyTo(attractionPoints, 0);
-		soundOrbs.CopyTo(attractionPoints, firedOrbs.Length);
+		List<GameObject> attractionPoints = new List<GameObject>();
+		
+		for (int i = 0; i < soundOrbs.Length; i++){
+			if (soundOrbs[i].GetComponent<SoundOrb>().intensity > minSoundIntensityRequired){
+				attractionPoints.Add(soundOrbs[i]);	
+			}
+		}
+		
+		for (int i = 0; i < firedOrbs.Length; i++){
+			RaycastHit hit = new RaycastHit();
+			if (Physics.Raycast (transform.position, firedOrbs[i].transform.position-transform.position, out hit, 1000, ignoreEnemyMask)) {
+				if (hit.transform.gameObject == firedOrbs[i]){
+					attractionPoints.Add (firedOrbs[i]);	
+				}
+			}
+		}
+		
+		RaycastHit hit2 = new RaycastHit();
+		if (Physics.Raycast (transform.position, player.transform.position-transform.position, out hit2, 1000, ignoreEnemyMask)) {
+			if (hit2.transform.gameObject == player){
+				attractionPoints.Add (player);	
+			}
+		}
+		
 		
 		double totalAttraction = 0;
 		
 		Vector3 targetPosition = Vector3.zero;
 		
-		if (attractionPoints.Length > 0){
+		if (attractionPoints.Count > 0){
 			
-			for (int i = 0; i < attractionPoints.Length; i++){
+			for (int i = 0; i < attractionPoints.Count; i++){
 				totalAttraction +=	CalculateAttraction(attractionPoints[i]);
 			}
 			
-			for (int i = 0; i < attractionPoints.Length; i++){
+			for (int i = 0; i < attractionPoints.Count; i++){
 				targetPosition += (float)(CalculateAttraction(attractionPoints[i])/totalAttraction)*attractionPoints[i].transform.position;
 			}
 				
 			GameObject target = attractionPoints[0];
-			if (attractionPoints.Length > 1){
+			if (attractionPoints.Count > 1){
 				float distance = (target.transform.position-targetPosition).sqrMagnitude;
-				for (int i = 1; i < attractionPoints.Length; i++){
+				for (int i = 1; i < attractionPoints.Count; i++){
 					float newDistance = (attractionPoints[i].transform.position-targetPosition).sqrMagnitude;
 					if (newDistance < distance || (newDistance == distance && CalculateAttraction(attractionPoints[i]) > CalculateAttraction(target))){
 						distance = newDistance;
@@ -64,12 +94,9 @@ public class LightTracker : MonoBehaviour {
 				}else if (target.GetComponent<FiredOrb>() != null){
 					target.GetComponent<FiredOrb>().age += ageFactor*Time.deltaTime;
 				}
-			}
+			}	
 			
-			if (lastTarget != null && target != lastTarget){
-			print ("switching from attraction "+CalculateAttraction(lastTarget)+" to "+CalculateAttraction(target));
-			}
-				
+			print (CalculateAttraction(target));
 			
 			lastTarget = target;
 			mover.UpdateTarget(target);
@@ -112,6 +139,11 @@ public class LightTracker : MonoBehaviour {
 	*/
 	
 	double CalculateAttraction(GameObject orb){
+		
+		if (orb == player){
+			return playerAttraction;	
+		}
+		
 		double dist = Vector3.Distance (transform.position, orb.transform.position);
 		if (dist < mover.minDistance){
 			dist = mover.minDistance;

@@ -27,8 +27,9 @@ public class AimingOrb : MonoBehaviour {
 	public float maxRange;
 	public float maxSpeed;	
 	
-	void Start () {
-
+	IEnumerator Start () {
+		yield return new WaitForSeconds(0.01f);
+		UseEnergy();
 		gameObject.SetActive(false);
 		Vector3 orbSize = new Vector3(0, 0, 0);
 		transform.localScale = new Vector3(0, 0, 0);

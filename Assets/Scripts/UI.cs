@@ -11,9 +11,11 @@ public class UI : MonoBehaviour {
 	public SoundOrb soundOrb;
 	public LightTracker lightTracker;
 	public EnemyMover enemyMover;
+	public Light directionalLight;
 	
 	
 	public GUIText ambientLightSlider;
+	public GUIText directionalLightSlider;
 	
 	// Aiming orb
 	public GUIText chargeRate;
@@ -60,6 +62,7 @@ public class UI : MonoBehaviour {
 	private List<GameAttr> valueMap = new List<GameAttr>();
 	
 	private int ambientLightValue;
+	private int directionalLightValue;
 	// Use this for initialization
 	void Start () {
 		CreateMap ();
@@ -104,6 +107,11 @@ public class UI : MonoBehaviour {
 		// Read in ambient light slider values
 		ambientLightValue = int.Parse(ambientLightSlider.text);
 		RenderSettings.ambientLight = new Color((float)ambientLightValue/255.0f, (float)ambientLightValue/255.0f, (float)ambientLightValue/255.0f, 1);
+		
+		// Read in global light slider values
+		directionalLightValue = int.Parse(directionalLightSlider.text);
+		directionalLight.intensity = ((float)directionalLightValue / 50.0f);
+		
 		
 		// Set player speed
 		if (lastSpeed.Equals(playerSpeed.text) == false) {

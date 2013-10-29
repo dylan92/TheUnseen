@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<authoring_tool>PlayUp</authoring_tool>							
+		</contributor>
+		<created>2013-10-28T12:18:57Z</created> 										
+		<modified>2013-10-28T12:18:57Z</modified>										
+		<revision>1.4.1</revision>
+		<unit meter="1.0" name="meter"></unit>
+	</asset>
+	<library_images>
+		<image id="playup_nomaterial_tga_img" format="bitmap" height="32" width="32" depth="32">
+			<init_from>PlayUp/Objects/Materials/Textures/playup_nomaterial.tga</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="-1-playup_nomaterial_fx">								
+			<profile_COMMON>
+				<newparam sid="playup_nomaterial_tga_surface">
+					<surface type="2D">
+						<init_from>playup_nomaterial_tga_img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="playup_nomaterial_tga_sampler">
+					<sampler2D>
+						<source>playup_nomaterial_tga_surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="default">
+					<phong>
+						<emission>
+							<color sid="emission">0.000000 0.000000 0.000000 1.000000</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.000000 0.000000 0.000000 1.000000</color>
+						</ambient>
+						<diffuse>
+							<color sid="diffuse">0.999999993 0.999999993 0.999999993 1.000000</color>
+						</diffuse>
+						<specular>
+							<color sid="specular">0.000000 0.000000 0.000000 1.000000</color>
+						</specular>
+						<shininess>
+							<float sid="shininess">0.000000</float>
+						</shininess>
+						<reflective>
+							<color sid="reflective">0.000000 0.000000 0.000000 1.000000</color>
+						</reflective>
+						<reflectivity>
+							<float sid="reflectivity">0.000000</float>
+						</reflectivity>
+						<transparent opaque="RGB_ZERO">
+							<color sid="transparent">0.000000 0.000000 0.000000 0.000000</color>
+						</transparent>
+						<transparency>
+							<float sid="transparency">0.000000</float>
+						</transparency>
+						<index_of_refraction>
+							<float sid="index_of_refraction">0.000000</float>
+						</index_of_refraction>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+
+	</library_effects>
+	<library_materials>
+		<material id="-1-playup_nomaterial">									
+			<instance_effect url="#-1-playup_nomaterial_fx"></instance_effect>	
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="geometries_0">												
+			<mesh>
+				<source id="geometries_0-Pos">											
+					<float_array id="geometries_0-Pos-array" count="108">				
+						0.0 0.0 -1.0
+						0.09375 0.0 -0.90625
+						0.0 0.0 -0.0
+						1.0 0.0 -1.0
+						0.90625 0.0 -0.90625
+						0.90625 0.0 -0.09375
+						0.09375 0.0 -0.09375
+						1.0 0.0 -0.0
+						0.8125 0.5 -0.8125
+						0.8125 1.0 -0.1875
+						0.8125 0.5 -0.1875
+						0.8125 1.0 -0.8125
+						0.1875 1.0 -0.8125
+						0.1875 0.5 -0.8125
+						0.1875 1.0 -0.1875
+						0.25 1.0 -0.25
+						0.75 1.0 -0.25
+						0.75 1.0 -0.75
+						0.25 1.0 -0.75
+						0.1875 0.5 -0.1875
+						0.75 0.5 -0.25
+						0.25 0.5 -0.75
+						0.25 0.5 -0.25
+						0.75 0.5 -0.75
+						0.90625 0.5 -0.09375
+						0.09375 0.25 -0.09375
+						0.90625 0.25 -0.09375
+						0.09375 0.5 -0.09375
+						0.09375 0.5 -0.90625
+						0.09375 0.25 -0.90625
+						0.90625 0.25 -0.90625
+						0.90625 0.5 -0.90625
+						1.0 0.25 -0.0
+						0.0 0.25 -0.0
+						1.0 0.25 -1.0
+						0.0 0.25 -1.0
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Pos-array" count="36" stride="3"> 	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_0-Normal">									
+					<float_array id="geometries_0-Normal-array" count="42">			
+						0.000000 0.000000 -0.025400
+						0.025400 -0.000000 0.000000
+						0.000000 0.025400 0.000000
+						0.000000 0.000000 0.025400
+						0.000000 -0.025400 0.000000
+						-0.025400 0.000000 0.000000
+						0.025400 0.000000 0.000000
+						0.000000 -0.025400 0.000000
+						0.000000 -0.025400 0.000000
+						-0.025400 -0.000000 0.000000
+						-0.000000 0.024965 0.004681
+						-0.024965 -0.000000 0.004681
+						0.000000 -0.024965 0.004681
+						0.024965 -0.000000 0.004681
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Normal-array" count="14" stride="3">	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_0-Texture_Projection">
+					<float_array id="geometries_0-Texture_Projection-array" count="150">
+						0.000000 39.370079
+						-3.690945 35.679134
+						0.000000 0.000000
+						-39.370079 39.370079
+						-35.679134 35.679134
+						-35.679134 3.690945
+						-3.690945 3.690945
+						-39.370079 0.000000
+						31.988189 19.685039
+						7.381890 39.370079
+						7.381890 19.685039
+						31.988189 39.370079
+						-7.381890 39.370079
+						-31.988189 19.685039
+						-7.381890 19.685039
+						-31.988189 39.370079
+						7.381890 7.381890
+						9.842520 9.842520
+						7.381890 31.988189
+						31.988189 7.381890
+						29.527559 9.842520
+						29.527559 29.527559
+						9.842520 29.527559
+						31.988189 31.988189
+						31.988189 39.370079
+						7.381890 19.685039
+						31.988189 19.685039
+						7.381890 39.370079
+						-7.381890 19.685039
+						-7.381890 39.370079
+						29.527559 19.685039
+						9.842520 39.370079
+						9.842520 19.685039
+						29.527559 39.370079
+						-29.527559 39.370079
+						-9.842520 19.685039
+						-9.842520 39.370079
+						-29.527559 19.685039
+						35.679134 19.685039
+						3.690945 9.842520
+						35.679134 9.842520
+						3.690945 19.685039
+						-35.679134 19.685039
+						-3.690945 9.842520
+						-3.690945 19.685039
+						-35.679134 9.842520
+						-3.690945 19.685039
+						-3.690945 9.842520
+						3.690945 19.685039
+						3.690945 9.842520
+						-7.381890 32.800699
+						-35.679134 12.772622
+						-3.690945 12.772622
+						-31.988189 32.800699
+						-7.381890 40.056153
+						-35.679134 20.028077
+						-3.690945 20.028077
+						-31.988189 40.056153
+						31.988189 40.056153
+						3.690945 20.028077
+						35.679134 20.028077
+						7.381890 40.056153
+						35.679134 12.772622
+						7.381890 32.800699
+						3.690945 12.772622
+						31.988189 32.800699
+						39.370079 9.842520
+						39.370079 0.000000
+						0.000000 9.842520
+						3.690945 3.690945
+						3.690945 35.679134
+						35.679134 3.690945
+						35.679134 35.679134
+						39.370079 39.370079
+						-39.370079 9.842520
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Texture_Projection-array" count="75" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geometries_0-Vtx">										
+					<input semantic="POSITION" source="#geometries_0-Pos"/>				
+				</vertices>
+				<triangles count="66" material="-1-playup_nomaterial">		
+					<input semantic="VERTEX" source="#geometries_0-Vtx" offset="0"/>
+					<input semantic="NORMAL" source="#geometries_0-Normal" offset="1"/>	
+					<input semantic="TEXCOORD" source="#geometries_0-Texture_Projection" offset="2"/>
+					<p>
+						0	0	0
+						1	0	1
+						2	0	2
+						1	0	1
+						0	0	0
+						3	0	3
+						1	0	1
+						3	0	3
+						4	0	4
+						4	0	4
+						3	0	3
+						5	0	5
+						2	0	2
+						6	0	6
+						7	0	7
+						6	0	6
+						2	0	2
+						1	0	1
+						7	0	7
+						6	0	6
+						5	0	5
+						7	0	7
+						5	0	5
+						3	0	3
+						8	1	8
+						9	1	9
+						10	1	10
+						9	1	9
+						8	1	8
+						11	1	11
+						12	2	12
+						8	2	13
+						13	2	14
+						8	2	13
+						12	2	12
+						11	2	15
+						14	3	16
+						15	3	17
+						12	3	18
+						15	3	17
+						14	3	16
+						9	3	19
+						15	3	17
+						9	3	19
+						16	3	20
+						16	3	20
+						9	3	19
+						17	3	21
+						12	3	18
+						18	3	22
+						11	3	23
+						18	3	22
+						12	3	18
+						15	3	17
+						11	3	23
+						18	3	22
+						17	3	21
+						11	3	23
+						17	3	21
+						9	3	19
+						9	4	24
+						19	4	25
+						10	4	26
+						19	4	25
+						9	4	24
+						14	4	27
+						12	5	15
+						19	5	28
+						14	5	29
+						19	5	28
+						12	5	15
+						13	5	13
+						20	3	20
+						21	3	22
+						22	3	17
+						21	3	22
+						20	3	20
+						23	3	21
+						21	6	30
+						15	6	31
+						22	6	32
+						15	6	31
+						21	6	30
+						18	6	33
+						17	7	33
+						21	7	32
+						23	7	30
+						21	7	32
+						17	7	33
+						18	7	31
+						17	5	34
+						20	5	35
+						16	5	36
+						20	5	35
+						17	5	34
+						23	5	37
+						15	2	36
+						20	2	37
+						22	2	35
+						20	2	37
+						15	2	36
+						16	2	34
+						24	8	38
+						25	8	39
+						26	8	40
+						25	8	39
+						24	8	38
+						27	8	41
+						28	9	42
+						25	9	43
+						27	9	44
+						25	9	43
+						28	9	42
+						29	9	45
+						28	2	46
+						30	2	45
+						29	2	47
+						30	2	45
+						28	2	46
+						31	2	42
+						30	6	40
+						24	6	48
+						26	6	49
+						24	6	48
+						30	6	40
+						31	6	38
+						12	10	50
+						31	10	51
+						28	10	52
+						31	10	51
+						12	10	50
+						11	10	53
+						14	11	54
+						28	11	55
+						27	11	56
+						28	11	55
+						14	11	54
+						12	11	57
+						9	12	58
+						27	12	59
+						24	12	60
+						27	12	59
+						9	12	58
+						14	12	61
+						31	13	62
+						9	13	63
+						24	13	64
+						9	13	63
+						31	13	62
+						11	13	65
+						32	7	66
+						2	7	2
+						7	7	67
+						2	7	2
+						32	7	66
+						33	7	68
+						3	6	67
+						32	6	68
+						7	6	2
+						32	6	68
+						3	6	67
+						34	6	66
+						33	3	2
+						25	3	69
+						35	3	0
+						25	3	69
+						33	3	2
+						32	3	67
+						35	3	0
+						25	3	69
+						29	3	70
+						25	3	69
+						32	3	67
+						26	3	71
+						26	3	71
+						32	3	67
+						30	3	72
+						29	3	70
+						34	3	73
+						35	3	0
+						34	3	73
+						29	3	70
+						30	3	72
+						34	3	73
+						30	3	72
+						32	3	67
+						35	5	74
+						2	5	2
+						33	5	68
+						2	5	2
+						35	5	74
+						0	5	7
+						35	2	68
+						3	2	7
+						0	2	2
+						3	2	7
+						35	2	68
+						34	2	74
+					</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="visual_scenes_0" name="untitled">
+			<node id="UnityExportNode_">					
+				<translate sid="translation">0.000000 0.000000 0.000000</translate>
+				<rotate sid="rotation_z">0.000000 0.000000 1.000000 0.000000</rotate>
+				<rotate sid="rotation_y">0.000000 1.000000 0.000000 0.000000</rotate>
+				<rotate sid="rotation_x">1.000000 0.000000 0.000000 0.000000</rotate>
+				<scale sid="scale">1.000000 1.000000 1.000000</scale>
+							<node id="mesh0%root%0%">													
+								<translate sid="translation">0 0 0</translate><rotate>0 0 0 0</rotate><scale sid="scale">1.000000 1.000000 1.000000</scale>
+								<instance_geometry url="#geometries_0">
+									<bind_material>
+										<technique_common>
+											<instance_material symbol="-1-playup_nomaterial" target="#-1-playup_nomaterial"> 
+
+
+
+
+												<bind semantic="diffuse_TEXCOORD" target="geometries_0-"></bind>
+											</instance_material>	
+										</technique_common>
+									</bind_material>
+								</instance_geometry>
+				</node>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#visual_scenes_0"/>
+	</scene>
+</COLLADA>

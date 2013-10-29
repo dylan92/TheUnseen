@@ -67,6 +67,11 @@ ModelImporter:
     100122: polySurface1 1
     100124: polySurface1 2
     100126: polySurface1 3
+    100128: pCube1
+    100130: pPlane1
+    100132: pPlane1 1
+    100134: pPlane1 2
+    100136: pPlane1 3
     400000: group10
     400002: group5
     400004: group6
@@ -131,6 +136,11 @@ ModelImporter:
     400122: polySurface1 1
     400124: polySurface1 2
     400126: polySurface1 3
+    400128: pCube1
+    400130: pPlane1
+    400132: pPlane1 1
+    400134: pPlane1 2
+    400136: pPlane1 3
     2300000: pasted__pCube4
     2300002: pasted__pCube4 1
     2300004: pasted__pCube4 2
@@ -188,6 +198,11 @@ ModelImporter:
     2300108: polySurface1 1
     2300110: polySurface1 2
     2300112: polySurface1 3
+    2300114: pCube1
+    2300116: pPlane1
+    2300118: pPlane1 1
+    2300120: pPlane1 2
+    2300122: pPlane1 3
     3300000: pasted__pCube4
     3300002: pasted__pCube4 1
     3300004: pasted__pCube4 2
@@ -245,6 +260,11 @@ ModelImporter:
     3300108: polySurface1 1
     3300110: polySurface1 2
     3300112: polySurface1 3
+    3300114: pCube1
+    3300116: pPlane1
+    3300118: pPlane1 1
+    3300120: pPlane1 2
+    3300122: pPlane1 3
     4300000: polySurface1
     4300002: pCube2
     4300004: pCube3
@@ -302,6 +322,11 @@ ModelImporter:
     4300108: pCylinder2
     4300110: pCylinder3
     4300112: pCube11
+    4300114: pCube1
+    4300116: pPlane1
+    4300118: pPlane1
+    4300120: pPlane1
+    4300122: pPlane1
     6400000: pasted__pCube4
     6400002: pasted__pCube4 1
     6400004: pasted__pCube4 2
@@ -359,6 +384,11 @@ ModelImporter:
     6400108: polySurface1 1
     6400110: polySurface1 2
     6400112: polySurface1 3
+    6400114: pCube1
+    6400116: pPlane1
+    6400118: pPlane1 1
+    6400120: pPlane1 2
+    6400122: pPlane1 3
     9500000: //RootNode
   materials:
     importMaterials: 1

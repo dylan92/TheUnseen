@@ -2,6 +2,8 @@
 #pragma implicit
 #pragma downcast
 
+var FPSCamera : GameObject;
+
 // Does this script currently respond to input?
 var canControl : boolean = true;
 
@@ -28,6 +30,8 @@ var inputCrouch : boolean = false;
 // for the sprint button directly so this script can also be used by AIs.
 @System.NonSerialized
 var inputSprint : boolean = false;
+
+var cameraLocalY : float = 1;
 
 class CharacterMotorMovement {
 	// The maximum horizontal speed when moving
@@ -213,28 +217,31 @@ function Awake () {
 	controller = GetComponent (CharacterController);
 	tr = transform;
 	
-	standHeight = playerCamera.transform.position.y;
+	standHeight = playerCamera.transform.localPosition.y;
 	crouchHeight = standHeight-crouchDrop;
+	cameraLocalY = standHeight;
 	
+	FPSCamera.SendMessage("SetMaxSpeed", movement.maxForwardSpeed);	
 }
 
 function CrouchCharacter() {
-	if (playerCamera.transform.position.y > crouchHeight){
-		playerCamera.transform.position.y -= crouchSpeed*Time.deltaTime;
+print(cameraLocalY);
+	if (cameraLocalY > crouchHeight){
+		cameraLocalY -= crouchSpeed*Time.deltaTime;
 	}
-	if (playerCamera.transform.position.y < crouchHeight){
-		playerCamera.transform.position.y = crouchHeight;
+	if (cameraLocalY < crouchHeight){
+		cameraLocalY = crouchHeight;
 	}
 	
 	
 }
 
 function StandCharacter() {
-	if (playerCamera.transform.position.y < standHeight){
-		playerCamera.transform.position.y += crouchSpeed*Time.deltaTime;
+	if (cameraLocalY < standHeight){
+		cameraLocalY += crouchSpeed*Time.deltaTime;
 	}
-	if (playerCamera.transform.position.y > standHeight){
-		playerCamera.transform.position.y = standHeight;
+	if (cameraLocalY > standHeight){
+		cameraLocalY = standHeight;
 	}
 }
 
@@ -377,6 +384,10 @@ private function UpdateFunction () {
 }
 
 function FixedUpdate () {
+
+	FPSCamera.SendMessage("SetGrounded", grounded);
+	FPSCamera.SendMessage("SetCameraY", cameraLocalY);
+
 	if (movingPlatform.enabled) {
 		if (movingPlatform.activePlatform != null) {
 			if (!movingPlatform.newPlatform) {
@@ -490,7 +501,7 @@ private function ApplyGravityAndJumping (velocity : Vector3) {
 		// because players will often try to jump in the exact moment when hitting the ground after a jump
 		// and if they hit the button a fraction of a second too soon and no new jump happens as a consequence,
 		// it's confusing and it feels like the game is buggy.
-		if (jumping.enabled && canControl && (Time.time - jumping.lastButtonDownTime < 0.2)) {
+		if (jumping.enabled && canControl && (Time.time - jumping.lastButtonDownTime < 0.2)) {		
 			grounded = false;
 			jumping.jumping = true;
 			jumping.lastStartTime = Time.time;

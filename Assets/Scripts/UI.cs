@@ -12,7 +12,7 @@ public class UI : MonoBehaviour {
 	public LightTracker lightTracker;
 	public EnemyMover enemyMover;
 	public Light directionalLight;
-	
+	public GameObject directions;
 	
 	public GUIText ambientLightSlider;
 	public GUIText directionalLightSlider;
@@ -65,6 +65,8 @@ public class UI : MonoBehaviour {
 	private int directionalLightValue;
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 0.0f;
+		
 		CreateMap ();
 		UpdateText ();
 	}
@@ -127,5 +129,11 @@ public class UI : MonoBehaviour {
 	// Received input from checkbox
 	void Message(string msg) {
 		firedOrb.stickToWalls = (msg == "Checked");
+		
+		if (msg == "Close") {
+			directions.SetActive(false);
+			Time.timeScale = 1.0f;
+			this.gameObject.SetActive(false);
+		}
 	}
 }

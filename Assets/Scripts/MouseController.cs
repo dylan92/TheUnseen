@@ -60,6 +60,8 @@ public class MouseController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!isPaused) {
+			Screen.showCursor = false;
+			Screen.lockCursor = true;
 			UpdatePrompts();
 			LeftMouseChecks (Time.deltaTime);
 			RightMouseChecks (Time.deltaTime);

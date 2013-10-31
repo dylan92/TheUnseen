@@ -1,6 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Generator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RechargeStation.cs">
     <Files>
       <File FileName="Assets\Scripts\UI.cs" Line="1" Column="1" />
       <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPCamera.cs" Line="1" Column="1" />
@@ -8,12 +8,13 @@
       <File FileName="Assets\UltimateFPS\Scripts\Gameplay\Surfaces\FootstepManager\vp_FootstepManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LightTracker.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Holder.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MouseController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MouseController.cs" Line="67" Column="19" />
       <File FileName="Assets\Scripts\AimingOrb.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ControlUnit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GeneratorPower.cs" Line="34" Column="86" />
-      <File FileName="Assets\Sources\LightningBolt.cs" Line="40" Column="30" />
-      <File FileName="Assets\Scripts\Generator.cs" Line="23" Column="3" />
+      <File FileName="Assets\Scripts\GeneratorPower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sources\LightningBolt.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Generator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RechargeStation.cs" Line="21" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\LightTracker.cs" />
      <Compile Include="Assets\Scripts\MouseController.cs" />
      <Compile Include="Assets\Scripts\NoninteractiveItem.cs" />
+     <Compile Include="Assets\Scripts\RechargeStation.cs" />
      <Compile Include="Assets\Scripts\SoundOrb.cs" />
      <Compile Include="Assets\Scripts\TextOnApproach.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />

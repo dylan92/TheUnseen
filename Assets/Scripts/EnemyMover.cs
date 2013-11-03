@@ -5,10 +5,11 @@ using Pathfinding;
 
 public class EnemyMover : MonoBehaviour {
 	
-	private GameObject target;
+	public GameObject target;
 	private Vector3 targetPosition;
 	
-	public float speed;
+	public float wanderSpeed;
+	public float chaseSpeed;
 	public float turnSpeed;
 	public float minDistance;	
 	
@@ -24,11 +25,14 @@ public class EnemyMover : MonoBehaviour {
 	private float recalculateTimer = 0;
 	public float recalculateWaitTime;
 	
+	enum states {WANDER, CHASE, CHASEPLAYER, ATTACK};
+	
+	private states state;
 	
 	// Use this for initialization
 	void Start () {
 		seeker = GetComponent<Seeker>();
-		target = null;
+		state = states.WANDER;
 		targetPosition = transform.position;
 		
 		if (nodeDist == 0 || nodeDist == null){
@@ -64,6 +68,11 @@ public class EnemyMover : MonoBehaviour {
 			}
 		}
 		
+		if (target == null){
+			state = states.WANDER;
+			UpdateTarget(GetNearestWaypoint());
+		}
+		
 		rigidbody.velocity = Vector3.zero;
 		
 		if (target != null && (target.transform.position-targetPosition).magnitude > minDistance) {
@@ -73,15 +82,24 @@ public class EnemyMover : MonoBehaviour {
 		
 		if (path == null) {
             return;
-        }        
+        }       
+		
         if (currentWaypoint >= path.vectorPath.Count) {
-            return;
+            if (state == states.WANDER && target.tag == "Waypoint"){
+				path = null;
+				UpdateTarget (target.GetComponent<Waypoint>().NextWaypoint());	
+			}
+			return;
         }
 		
         Vector3 moveDir = (path.vectorPath[currentWaypoint]-transform.position);		
 		moveDir.y = 0;
 		moveDir = moveDir.normalized;
-        moveDir *= speed * Time.fixedDeltaTime;
+		if (state == states.WANDER){
+        	moveDir *= wanderSpeed * Time.fixedDeltaTime;
+		}else{
+	        moveDir *= chaseSpeed * Time.fixedDeltaTime;		
+		}
         rigidbody.velocity = moveDir;
 
 		Vector3 dir = path.vectorPath[currentWaypoint] - transform.position;
@@ -109,9 +127,34 @@ public class EnemyMover : MonoBehaviour {
 		
 	}
 	
+	public GameObject GetNearestWaypoint(){
+		GameObject[] waypoints = GameObject.FindGameObjectsWithTag ("Waypoint");
+		if (waypoints.Length == 0){
+			return null;
+		}
+		GameObject target = waypoints[0];
+		float dist = (target.transform.position - transform.position).sqrMagnitude;
+		
+		for (int i = 1; i < waypoints.Length; i++){
+			if ((waypoints[i].transform.position - transform.position).sqrMagnitude < dist){
+				target = waypoints[i];
+				dist = (target.transform.position - transform.position).sqrMagnitude;
+			}
+		}
+		return target;
+	}
+	
 	public void UpdateTarget(GameObject _target) {
 		if (target != _target){
-			target = _target;	
+			if (_target.tag == "Waypoint"){
+				state = states.WANDER;	
+			}else if (_target.tag == "Player"){
+				state = states.CHASEPLAYER;	
+			}else{
+				state = states.CHASE;	
+			}
+			target = _target;
+						
 			targetPosition = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
 			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
 		}

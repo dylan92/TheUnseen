@@ -39,7 +39,7 @@ public class UI : MonoBehaviour {
 	public GUIText lightIntensityWeight;
 	public GUIText soundIntensityWeight;
 	public GUIText ageFactor;
-	public GUIText speed;
+	public GUIText chaseSpeed;
 	
 	// Player
 	public GUIText playerSpeed;
@@ -93,7 +93,7 @@ public class UI : MonoBehaviour {
 		valueMap.Add (new GameAttr(lightTracker, "soundIntensityWeight", soundIntensityWeight));	
 		valueMap.Add (new GameAttr(lightTracker, "ageFactor", ageFactor));	
 		
-		valueMap.Add (new GameAttr(enemyMover, "speed", speed));	
+		valueMap.Add (new GameAttr(enemyMover, "chaseSpeed", chaseSpeed));	
 		
 	}
 	

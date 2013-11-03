@@ -1,20 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RechargeStation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LightTracker.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI.cs" Line="1" Column="1" />
-      <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPCamera.cs" Line="1" Column="1" />
-      <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPController.cs" Line="1" Column="1" />
-      <File FileName="Assets\UltimateFPS\Scripts\Gameplay\Surfaces\FootstepManager\vp_FootstepManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LightTracker.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Holder.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MouseController.cs" Line="67" Column="19" />
-      <File FileName="Assets\Scripts\AimingOrb.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ControlUnit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GeneratorPower.cs" Line="1" Column="1" />
-      <File FileName="Assets\Sources\LightningBolt.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Generator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RechargeStation.cs" Line="21" Column="48" />
+      <File FileName="Assets\Scripts\Waypoint.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\EnemyMover.cs" Line="97" Column="32" />
+      <File FileName="Assets\Scripts\LightTracker.cs" Line="54" Column="5" />
+      <File FileName="Assets\Scripts\AimingOrb.cs" Line="40" Column="35" />
+      <File FileName="Assets\Scripts\UI.cs" Line="35" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

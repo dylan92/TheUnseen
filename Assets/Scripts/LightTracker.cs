@@ -57,10 +57,11 @@ public class LightTracker : MonoBehaviour {
 		RaycastHit hit2 = new RaycastHit();
 		if (Physics.Raycast (transform.position, player.transform.position-transform.position, out hit2, 1000, ignoreEnemyMask)) {
 			if (hit2.transform.gameObject == player){
-				attractionPoints.Add (player);	
+				if (Vector3.Angle((transform.position-player.transform.position), transform.forward) > 90f){
+					attractionPoints.Add (player);	
+				}
 			}
 		}
-		
 		
 		double totalAttraction = 0;
 		
@@ -95,9 +96,6 @@ public class LightTracker : MonoBehaviour {
 					target.GetComponent<FiredOrb>().age += ageFactor*Time.deltaTime;
 				}
 			}	
-			
-			print (CalculateAttraction(target));
-			
 			lastTarget = target;
 			mover.UpdateTarget(target);
 		}

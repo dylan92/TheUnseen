@@ -37,17 +37,19 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>G:/Program Files/Unity4/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>G:/Program Files/Unity4/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GUI Essentials\Scripts\ClickThrough.cs" />
      <Compile Include="Assets\Scripts\ActivateWhenItemApproaches.cs" />
      <Compile Include="Assets\Scripts\Activateable.cs" />
+     <Compile Include="Assets\Scripts\AdjustVisibility.cs" />
      <Compile Include="Assets\Scripts\AimingOrb.cs" />
+     <Compile Include="Assets\Scripts\AmbientSound.cs" />
      <Compile Include="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs" />
      <Compile Include="Assets\Scripts\CameraBobCode\PlayerCameraBobOld.cs" />
      <Compile Include="Assets\Scripts\ControlUnit.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Scripts\GeneratorPower.cs" />
      <Compile Include="Assets\Scripts\Holder.cs" />
      <Compile Include="Assets\Scripts\InteractiveItem.cs" />
+     <Compile Include="Assets\Scripts\LightControlUnit.cs" />
      <Compile Include="Assets\Scripts\LightTracker.cs" />
      <Compile Include="Assets\Scripts\MouseController.cs" />
      <Compile Include="Assets\Scripts\NoninteractiveItem.cs" />

@@ -27,6 +27,8 @@ public class AimingOrb : MonoBehaviour {
 	public float maxRange;
 	public float maxSpeed;	
 	
+	public AudioClip outOfAmmo;
+	
 	IEnumerator Start () {
 		yield return new WaitForSeconds(0.01f);
 		UseEnergy();
@@ -47,6 +49,10 @@ public class AimingOrb : MonoBehaviour {
 		else if (power > energy && energy > 0.0f) {
 			power -= (drainRate/100)*(maxPower-minPower)*deltaTime;
 			energy -= deltaTime;
+		}
+		else if (energy <= 0.0f) {
+			Camera.main.gameObject.audio.clip = outOfAmmo;
+			Camera.main.gameObject.audio.Play();
 		}
 		UpdateOrb();
 	}

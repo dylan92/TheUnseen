@@ -68,7 +68,7 @@ public class PlayerCameraBob : MonoBehaviour {
 	}
 	
 	void PlayFootStep(){
-		
+		player.SendMessage("Footstep");
 	}
 		
 	

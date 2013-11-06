@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<authoring_tool>PlayUp</authoring_tool>							
+		</contributor>
+		<created>2013-11-03T19:10:32Z</created> 										
+		<modified>2013-11-03T19:10:32Z</modified>										
+		<revision>1.4.1</revision>
+		<unit meter="1.0" name="meter"></unit>
+	</asset>
+	<library_images>
+		<image id="playup_nomaterial_tga_img" format="bitmap" height="32" width="32" depth="32">
+			<init_from>PlayUp/Objects/Materials/Textures/playup_nomaterial.tga</init_from>
+		</image>
+		<image id="Monitor5_tga_img" format="bitmap" height="256" width="512" depth="32">
+			<init_from>PlayUp/Objects/Materials/Textures/Monitor5.tga</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="-1-playup_nomaterial_fx">								
+			<profile_COMMON>
+				<newparam sid="playup_nomaterial_tga_surface">
+					<surface type="2D">
+						<init_from>playup_nomaterial_tga_img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="playup_nomaterial_tga_sampler">
+					<sampler2D>
+						<source>playup_nomaterial_tga_surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="default">
+					<phong>
+						<emission>
+							<color sid="emission">0.000000 0.000000 0.000000 1.000000</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.000000 0.000000 0.000000 1.000000</color>
+						</ambient>
+						<diffuse>
+							<color sid="diffuse">0.999999993 0.999999993 0.999999993 1.000000</color>
+						</diffuse>
+						<specular>
+							<color sid="specular">0.000000 0.000000 0.000000 1.000000</color>
+						</specular>
+						<shininess>
+							<float sid="shininess">0.000000</float>
+						</shininess>
+						<reflective>
+							<color sid="reflective">0.000000 0.000000 0.000000 1.000000</color>
+						</reflective>
+						<reflectivity>
+							<float sid="reflectivity">0.000000</float>
+						</reflectivity>
+						<transparent opaque="RGB_ZERO">
+							<color sid="transparent">0.000000 0.000000 0.000000 0.000000</color>
+						</transparent>
+						<transparency>
+							<float sid="transparency">0.000000</float>
+						</transparency>
+						<index_of_refraction>
+							<float sid="index_of_refraction">0.000000</float>
+						</index_of_refraction>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="-2-Monitor5_fx">								
+			<profile_COMMON>
+				<newparam sid="Monitor5_tga_surface">
+					<surface type="2D">
+						<init_from>Monitor5_tga_img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="Monitor5_tga_sampler">
+					<sampler2D>
+						<source>Monitor5_tga_surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="default">
+					<phong>
+						<emission>
+							<color sid="emission">0.000000 0.000000 0.000000 1.000000</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.000000 0.000000 0.000000 1.000000</color>
+						</ambient>
+						<diffuse>
+							<texture texture="Monitor5_tga_sampler" texcoord="diffuse_TEXCOORD"></texture> RARRR~!~
+						</diffuse>
+						<specular>
+							<color sid="specular">0.000000 0.000000 0.000000 1.000000</color>
+						</specular>
+						<shininess>
+							<float sid="shininess">0.000000</float>
+						</shininess>
+						<reflective>
+							<color sid="reflective">0.000000 0.000000 0.000000 1.000000</color>
+						</reflective>
+						<reflectivity>
+							<float sid="reflectivity">0.000000</float>
+						</reflectivity>
+						<transparent opaque="RGB_ZERO">
+							<color sid="transparent">0.000000 0.000000 0.000000 0.000000</color>
+						</transparent>
+						<transparency>
+							<float sid="transparency">0.000000</float>
+						</transparency>
+						<index_of_refraction>
+							<float sid="index_of_refraction">0.000000</float>
+						</index_of_refraction>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+
+	</library_effects>
+	<library_materials>
+		<material id="-1-playup_nomaterial">									
+			<instance_effect url="#-1-playup_nomaterial_fx"></instance_effect>	
+		</material>
+		<material id="-2-Monitor5">									
+			<instance_effect url="#-2-Monitor5_fx"></instance_effect>	
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="geometries_0">												
+			<mesh>
+				<source id="geometries_0-Pos">											
+					<float_array id="geometries_0-Pos-array" count="93">				
+						1.0 0.0 -2.2
+						0.0 0.0 -0.0
+						0.0 0.0 -2.2
+						1.0 0.0 -0.0
+						0.196116135138184 1.16077677297236 -0.0
+						0.0 1.0 -0.0
+						1.0 1.0 -0.0
+						0.0 1.2 -0.0
+						0.0 1.0 -2.2
+						1.0 1.0 -2.2
+						0.0 1.2 -1.0
+						7.21911419532262e-016 1.2 -1.2
+						0.0 1.2 -2.2
+						0.156892908110548 1.47456258919346 -0.0
+						0.0509901951359288 1.45495097567964 -0.0
+						0.25495097567964 1.45495097567964 -0.0
+						0.0549125178386919 1.47456258919346 -0.0
+						0.156892908110548 2.47456258919346 -0.0
+						0.0549125178386919 2.47456258919346 -0.0
+						0.25495097567964 1.45495097567964 -1.2
+						0.196116135138185 1.16077677297236 -1.2
+						0.0509901951359288 1.45495097567964 -1.2
+						0.156892908110548 1.47456258919346 -2.2
+						0.25495097567964 1.45495097567964 -2.2
+						0.0509901951359288 1.45495097567964 -2.2
+						0.0549125178386919 1.47456258919346 -2.2
+						0.0549125178386919 2.47456258919346 -2.2
+						0.156892908110548 2.47456258919346 -2.2
+						0.25495097567964 1.45495097567964 -1.0
+						0.0509901951359288 1.45495097567964 -1.0
+						0.196116135138185 1.16077677297236 -1.0
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Pos-array" count="31" stride="3"> 	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_0-Normal">									
+					<float_array id="geometries_0-Normal-array" count="45">			
+						0.000000 0.000000 -0.025400
+						0.000000 -0.025400 0.000000
+						-0.025400 0.000000 0.000000
+						0.025400 0.000000 0.000000
+						-0.025400 -0.000000 0.000000
+						0.000000 -0.025400 -0.000000
+						0.000000 0.025400 0.000000
+						0.004981 0.000000 0.024907
+						-0.000000 0.025400 0.000000
+						-0.000000 0.000000 -0.025400
+						0.024907 0.000000 -0.004981
+						-0.024907 0.000000 0.004981
+						0.004981 0.000000 0.024907
+						-0.025400 -0.000000 0.000000
+						0.000000 0.000000 0.025400
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Normal-array" count="15" stride="3">	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_0-Texture_Projection">
+					<float_array id="geometries_0-Texture_Projection-array" count="152">
+						-39.370079 86.614173
+						0.000000 0.000000
+						0.000000 86.614173
+						-39.370079 0.000000
+						7.721108 45.699873
+						0.000000 39.370079
+						39.370079 39.370079
+						0.000000 47.244094
+						-86.614173 39.370079
+						-86.614173 0.000000
+						86.614173 0.000000
+						86.614173 39.370079
+						39.370079 0.000000
+						-39.370079 47.244094
+						-47.244094 47.244094
+						-86.614173 47.244094
+						6.176886 58.053645
+						2.007488 57.281534
+						10.037440 57.281534
+						2.161910 58.053645
+						6.176886 97.423724
+						2.161910 97.423724
+						-0.000000 47.244094
+						-10.037440 57.281534
+						-7.721108 45.699873
+						-2.007488 57.281534
+						-0.000000 1.391313
+						86.614173 5.328321
+						-0.000000 5.328321
+						86.614173 1.391313
+						-2.007488 57.281534
+						-6.176886 58.053645
+						-10.037440 57.281534
+						-2.161910 58.053645
+						-2.161910 97.423724
+						-6.176886 97.423724
+						-10.037440 39.370079
+						-2.007488 0.000000
+						-2.007488 39.370079
+						-10.037440 0.000000
+						47.244094 46.326646
+						39.370079 58.137670
+						39.370079 46.326646
+						47.244094 58.137670
+						10.037440 57.281534
+						7.721108 45.699873
+						-86.614173 57.350268
+						-0.000000 56.562867
+						-0.000000 57.350268
+						-39.370079 56.562867
+						-47.244094 56.562867
+						-39.370079 46.326646
+						-86.614173 56.562867
+						-47.244094 46.326646
+						-0.000000 1.391313
+						39.370079 9.265329
+						0.000000 9.265329
+						39.370079 1.391313
+						-0.000000 -30.884431
+						47.244094 1.391313
+						47.244094 9.265329
+						86.614173 -30.884431
+						86.614173 9.265329
+						-10.037440 86.614173
+						-2.007488 47.244094
+						-2.007488 86.614173
+						-10.037440 47.244094
+						-86.614173 97.423724
+						0.000000 58.053645
+						0.000000 97.423724
+						-86.614173 58.053645
+						6.176886 0.000000
+						2.161910 86.614173
+						2.161910 0.000000
+						6.176886 86.614173
+						-39.370079 39.370079
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Texture_Projection-array" count="76" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geometries_0-Vtx">										
+					<input semantic="POSITION" source="#geometries_0-Pos"/>				
+				</vertices>
+				<triangles count="54" material="-1-playup_nomaterial">		
+					<input semantic="VERTEX" source="#geometries_0-Vtx" offset="0"/>
+					<input semantic="NORMAL" source="#geometries_0-Normal" offset="1"/>	
+					<input semantic="TEXCOORD" source="#geometries_0-Texture_Projection" offset="2"/>
+					<p>
+						0	0	0
+						1	0	1
+						2	0	2
+						1	0	1
+						0	0	0
+						3	0	3
+						4	1	4
+						5	1	5
+						6	1	6
+						5	1	5
+						4	1	4
+						7	1	7
+						8	2	8
+						1	2	1
+						5	2	5
+						1	2	1
+						8	2	8
+						2	2	9
+						0	3	10
+						6	3	5
+						3	3	1
+						6	3	5
+						0	3	10
+						9	3	11
+						6	1	6
+						1	1	1
+						3	1	12
+						1	1	1
+						6	1	6
+						5	1	5
+						10	4	13
+						5	4	5
+						7	4	7
+						5	4	5
+						10	4	13
+						8	4	8
+						8	4	8
+						10	4	13
+						11	4	14
+						8	4	8
+						11	4	14
+						12	4	15
+						13	5	16
+						14	5	17
+						15	5	18
+						14	5	17
+						13	5	16
+						16	5	19
+						16	5	19
+						13	5	16
+						17	5	20
+						16	5	19
+						17	5	20
+						18	5	21
+						11	6	22
+						19	6	23
+						20	6	24
+						19	6	23
+						11	6	22
+						21	6	25
+						15	7	26
+						22	7	27
+						13	7	28
+						22	7	27
+						15	7	26
+						23	7	29
+						24	8	30
+						22	8	31
+						23	8	32
+						22	8	31
+						24	8	30
+						25	8	33
+						22	8	31
+						25	8	33
+						26	8	34
+						22	8	31
+						26	8	34
+						27	8	35
+						28	9	36
+						14	9	37
+						29	9	38
+						14	9	37
+						28	9	36
+						15	9	39
+						20	10	40
+						28	10	41
+						30	10	42
+						28	10	41
+						20	10	40
+						19	10	43
+						28	1	44
+						10	1	7
+						30	1	45
+						10	1	7
+						28	1	44
+						29	1	17
+						25	11	46
+						14	11	47
+						16	11	48
+						14	11	47
+						25	11	46
+						29	11	49
+						29	11	49
+						25	11	46
+						21	11	50
+						29	11	49
+						21	11	50
+						10	11	51
+						21	11	50
+						25	11	46
+						24	11	52
+						11	11	53
+						10	11	51
+						21	11	50
+						4	12	54
+						10	12	55
+						7	12	56
+						10	12	55
+						4	12	54
+						30	12	57
+						30	12	57
+						4	12	54
+						6	12	58
+						30	12	57
+						6	12	58
+						20	12	59
+						11	12	60
+						9	12	61
+						12	12	62
+						9	12	61
+						11	12	60
+						20	12	59
+						9	12	61
+						20	12	59
+						6	12	58
+						23	9	63
+						21	9	64
+						24	9	65
+						21	9	64
+						23	9	63
+						19	9	66
+						26	13	67
+						16	13	68
+						18	13	69
+						16	13	68
+						26	13	67
+						25	13	70
+						17	14	71
+						26	14	72
+						18	14	73
+						26	14	72
+						17	14	71
+						27	14	74
+						8	6	5
+						0	6	3
+						2	6	1
+						0	6	3
+						8	6	5
+						9	6	75
+						9	6	75
+						8	6	5
+						12	6	7
+					</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geometries_1">												
+			<mesh>
+				<source id="geometries_1-Pos">											
+					<float_array id="geometries_1-Pos-array" count="12">				
+						0.156892908110548 1.47456258919346 -2.2
+						0.156892908110548 2.47456258919346 -0.0
+						0.156892908110548 1.47456258919346 -0.0
+						0.156892908110548 2.47456258919346 -2.2
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_1-Pos-array" count="4" stride="3"> 	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_1-Normal">									
+					<float_array id="geometries_1-Normal-array" count="3">			
+						0.025400 0.000000 -0.000000
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_1-Normal-array" count="1" stride="3">	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_1-Texture_Projection">
+					<float_array id="geometries_1-Texture_Projection-array" count="8">
+						1.049133 2.007344
+						-0.050867 3.007344
+						-0.050867 2.007344
+						1.049133 3.007344
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_1-Texture_Projection-array" count="4" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geometries_1-Vtx">										
+					<input semantic="POSITION" source="#geometries_1-Pos"/>				
+				</vertices>
+				<triangles count="2" material="-2-Monitor5">		
+					<input semantic="VERTEX" source="#geometries_1-Vtx" offset="0"/>
+					<input semantic="NORMAL" source="#geometries_1-Normal" offset="1"/>	
+					<input semantic="TEXCOORD" source="#geometries_1-Texture_Projection" offset="2"/>
+					<p>
+						0	0	0
+						1	0	1
+						2	0	2
+						1	0	1
+						0	0	0
+						3	0	3
+					</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="visual_scenes_0" name="untitled">
+			<node id="UnityExportNode_">					
+				<translate sid="translation">0.000000 0.000000 0.000000</translate>
+				<rotate sid="rotation_z">0.000000 0.000000 1.000000 0.000000</rotate>
+				<rotate sid="rotation_y">0.000000 1.000000 0.000000 0.000000</rotate>
+				<rotate sid="rotation_x">1.000000 0.000000 0.000000 0.000000</rotate>
+				<scale sid="scale">1.000000 1.000000 1.000000</scale>
+							<node id="mesh0%root%0%">													
+								<translate sid="translation">0 0 0</translate><rotate>0 0 0 0</rotate><scale sid="scale">1.000000 1.000000 1.000000</scale>
+								<instance_geometry url="#geometries_0">
+									<bind_material>
+										<technique_common>
+											<instance_material symbol="-1-playup_nomaterial" target="#-1-playup_nomaterial"> 
+
+
+
+
+												<bind semantic="diffuse_TEXCOORD" target="geometries_0-"></bind>
+											</instance_material>	
+										</technique_common>
+									</bind_material>
+								</instance_geometry>
+							<node id="mesh0%root%1%">													
+								<translate sid="translation">0 0 0</translate><rotate>0 0 0 0</rotate><scale sid="scale">1.000000 1.000000 1.000000</scale>
+								<instance_geometry url="#geometries_1">
+									<bind_material>
+										<technique_common>
+											<instance_material symbol="-2-Monitor5" target="#-2-Monitor5"> 
+
+
+
+
+												<bind semantic="diffuse_TEXCOORD" target="geometries_1-"></bind>
+											</instance_material>	
+										</technique_common>
+									</bind_material>
+								</instance_geometry>
+				</node>
+				</node>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#visual_scenes_0"/>
+	</scene>
+</COLLADA>

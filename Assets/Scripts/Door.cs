@@ -32,6 +32,7 @@ public class Door : Activateable {
 	}
 	
 	IEnumerator OpenDoor(){
+		audio.Play();
 		isOpen = true;
 		while (timeOpening < timeToOpen){
 			timeOpening += timeInterval;

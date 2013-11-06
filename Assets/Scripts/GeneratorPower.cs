@@ -4,6 +4,7 @@ using System.Collections;
 public class GeneratorPower : MonoBehaviour {
 
 	public GameObject lightningEmitter;
+	public float minIntensity;
 	public float maxIntensity;
 	public float minRange;
 	public float maxRange;
@@ -20,7 +21,7 @@ public class GeneratorPower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.light.intensity = (power/maxPower)*maxIntensity;
+		this.light.intensity = (power/maxPower)*maxIntensity + minIntensity;
 		this.light.range = ((power/maxPower)*(maxRange-minRange))+minRange;
 		
 	}

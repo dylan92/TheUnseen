@@ -18,7 +18,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_1;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_WEBPLAYER;WEBPLUG;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_2_2;UNITY_4_2;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -47,7 +47,9 @@
      <Compile Include="Assets\GUI Essentials\Scripts\ClickThrough.cs" />
      <Compile Include="Assets\Scripts\ActivateWhenItemApproaches.cs" />
      <Compile Include="Assets\Scripts\Activateable.cs" />
+     <Compile Include="Assets\Scripts\AdjustVisibility.cs" />
      <Compile Include="Assets\Scripts\AimingOrb.cs" />
+     <Compile Include="Assets\Scripts\AmbientSound.cs" />
      <Compile Include="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs" />
      <Compile Include="Assets\Scripts\CameraBobCode\PlayerCameraBobOld.cs" />
      <Compile Include="Assets\Scripts\ControlUnit.cs" />
@@ -57,10 +59,12 @@
      <Compile Include="Assets\Scripts\EnemyMover.cs" />
      <Compile Include="Assets\Scripts\EnergyPickup.cs" />
      <Compile Include="Assets\Scripts\FiredOrb.cs" />
+     <Compile Include="Assets\Scripts\Footsteps.cs" />
      <Compile Include="Assets\Scripts\Generator.cs" />
      <Compile Include="Assets\Scripts\GeneratorPower.cs" />
      <Compile Include="Assets\Scripts\Holder.cs" />
      <Compile Include="Assets\Scripts\InteractiveItem.cs" />
+     <Compile Include="Assets\Scripts\LightControlUnit.cs" />
      <Compile Include="Assets\Scripts\LightTracker.cs" />
      <Compile Include="Assets\Scripts\MouseController.cs" />
      <Compile Include="Assets\Scripts\NoninteractiveItem.cs" />

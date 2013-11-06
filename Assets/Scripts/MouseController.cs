@@ -43,7 +43,7 @@ public class MouseController : MonoBehaviour {
 	
 	public int maxHealth;
 	public float playerHealth;
-	public int recoverRate;
+	public float recoverRate;
 
 	
 	// Use this for initialization
@@ -65,9 +65,13 @@ public class MouseController : MonoBehaviour {
 			UpdatePrompts();
 			LeftMouseChecks (Time.deltaTime);
 			RightMouseChecks (Time.deltaTime);
-			//if(playerHealth < maxHealth) {
-			//	playerHealth += recoverRate*Time.deltaTime;
-			//}
+			borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 1-(playerHealth/maxHealth));
+			if(playerHealth < maxHealth) {
+				playerHealth += recoverRate*Time.deltaTime;
+				if(playerHealth > maxHealth) {
+					playerHealth = maxHealth;	
+				}
+			}
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			if (isPaused) {
@@ -162,22 +166,12 @@ public class MouseController : MonoBehaviour {
 		}
 	}
 	
-	public IEnumerator TakeDamage(int dmg) {
+	public void TakeDamage(float dmg) {
 		if(playerHealth > 0) {
 			playerHealth -= dmg;
 		} else {
 			Die ();	
 		}
-		borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
-		float t = Time.time;
-		float amt = 0.05f;
-		while (Time.time - t < 1.0f) {
-			borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.5f - amt);
-			yield return new WaitForSeconds(0.1f);
-			amt += 0.05f;
-		}
-		borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
-		
 	}
 	
 	public void Die() {

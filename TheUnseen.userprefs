@@ -1,12 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LightTracker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs">
     <Files>
-      <File FileName="Assets\Scripts\Waypoint.cs" Line="10" Column="1" />
-      <File FileName="Assets\Scripts\EnemyMover.cs" Line="97" Column="32" />
-      <File FileName="Assets\Scripts\LightTracker.cs" Line="54" Column="5" />
-      <File FileName="Assets\Scripts\AimingOrb.cs" Line="40" Column="35" />
-      <File FileName="Assets\Scripts\UI.cs" Line="35" Column="27" />
+      <File FileName="Assets\Scripts\EnemyDamage.cs" Line="12" Column="34" />
+      <File FileName="Assets\Scripts\MouseController.cs" Line="33" Column="34" />
+      <File FileName="Assets\Scripts\Footsteps.cs" Line="113" Column="17" />
+      <File FileName="Assets\UltimateFPS\Scripts\Gameplay\Surfaces\FootstepManager\vp_SurfaceIdentifier.cs" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\CharacterMover.js" Line="295" Column="56" />
+      <File FileName="Assets\UltimateFPS\Scripts\Gameplay\Surfaces\FootstepManager\vp_FootstepManager.cs" Line="18" Column="1" />
+      <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPController.cs" Line="692" Column="64" />
+      <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPPlayerEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs" Line="71" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

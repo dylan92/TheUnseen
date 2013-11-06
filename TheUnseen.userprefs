@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs">
     <Files>
       <File FileName="Assets\Scripts\EnemyDamage.cs" Line="12" Column="34" />
@@ -11,6 +12,31 @@
       <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPController.cs" Line="692" Column="64" />
       <File FileName="Assets\UltimateFPS\Scripts\Core\LocalPlayer\vp_FPPlayerEventHandler.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraBobCode\PlayerCameraBob.cs" Line="71" Column="34" />
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GeneratorPower.cs">
+    <Files>
+      <File FileName="Assets\Scripts\GeneratorPower.cs" Line="24" Column="70" />
+      <File FileName="Assets\Scripts\LightControlUnit.cs" Line="34" Column="34" />
+      <File FileName="Assets\Scripts\ControlUnit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sources\LightningBolt.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyMover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Waypoint.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\LightTracker.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AimingOrb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AmbientSound.cs" Line="34" Column="17" />
+      <File FileName="Assets\Scripts\Door.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LightTracker.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Waypoint.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\EnemyMover.cs" Line="97" Column="32" />
+      <File FileName="Assets\Scripts\LightTracker.cs" Line="54" Column="5" />
+      <File FileName="Assets\Scripts\AimingOrb.cs" Line="40" Column="35" />
+      <File FileName="Assets\Scripts\UI.cs" Line="35" Column="27" />
+>>>>>>> 69a2996ba20a7c2b7971790a4ee7a8be23d91822
+>>>>>>> f15500c42040b02f0ae0dd8468cf5b77dac0504c
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

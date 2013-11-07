@@ -104,8 +104,9 @@ public class EnemyMover : MonoBehaviour {
 
 		Vector3 dir = path.vectorPath[currentWaypoint] - transform.position;
     	dir.y = 0;
-    	Quaternion rot = Quaternion.LookRotation(dir);
-    	transform.rotation = Quaternion.Slerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
+		RotateTowards(dir);
+    	//Quaternion rot = Quaternion.LookRotation(dir);
+    	//transform.rotation = Quaternion.Slerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
 				
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
@@ -158,5 +159,18 @@ public class EnemyMover : MonoBehaviour {
 			targetPosition = new Vector3(target.transform.position.x, target.transform.position.y, target.transform.position.z);
 			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
 		}
+	}
+	
+	protected virtual void RotateTowards (Vector3 dir) {
+		Quaternion rot = this.transform.rotation;
+		Quaternion toTarget = Quaternion.LookRotation (dir);
+		
+		rot = Quaternion.Slerp (rot,toTarget,turnSpeed*Time.fixedDeltaTime);
+		Vector3 euler = rot.eulerAngles;
+		euler.z = 0;
+		euler.x = 0;
+		rot = Quaternion.Euler (euler);
+		
+		this.transform.rotation = rot;
 	}
 }

@@ -13,9 +13,6 @@ public class EnemyMover : MonoBehaviour {
 	public float turnSpeed;
 	public float minDistance;	
 	
-	public float nodeDist;
-	private float nodeMaxDist;
-	
 	private Seeker seeker;
 	
     private Path path;	
@@ -24,6 +21,9 @@ public class EnemyMover : MonoBehaviour {
 	
 	private float recalculateTimer = 0;
 	public float recalculateWaitTime;
+	
+	public float nodeDist;
+    private float nodeMaxDist;
 	
 	enum states {WANDER, CHASE, CHASEPLAYER, ATTACK};
 	
@@ -36,9 +36,8 @@ public class EnemyMover : MonoBehaviour {
 		targetPosition = transform.position;
 		
 		if (nodeDist == 0 || nodeDist == null){
-			throw new System.Exception("declare node dist in EnemyMover.cs, stored in the graphs");	
+			throw new System.Exception("declare node dist in EnemyMover.cs, stored in the graphs");        
 		}
-		
 		nodeMaxDist = Mathf.Sqrt(2*(nodeDist*nodeDist));
 	}
 	

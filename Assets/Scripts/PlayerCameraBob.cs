@@ -6,7 +6,8 @@ public class PlayerCameraBob : MonoBehaviour {
         private float timer = 0;
         
         public GameObject player;
-        
+    	public GameObject stepSource;    
+	
         public float bobSpeed = 0.18f;
         public float bobAmplitude = .2f;
         private bool grounded = true;
@@ -68,8 +69,7 @@ public class PlayerCameraBob : MonoBehaviour {
         }
         
         void PlayFootStep(){
-				print ("callFootstep");
-                player.BroadcastMessage("Footstep");
+                stepSource.GetComponent<Footsteps>().Footstep();
         }
                 
         

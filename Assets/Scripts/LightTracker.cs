@@ -17,6 +17,8 @@ public class LightTracker : MonoBehaviour {
 	
 	public float focusMax;
 	
+	public float sightRange;
+	
 	private EnemyMover mover;
 	
 	private GameObject lastTarget;
@@ -47,7 +49,7 @@ public class LightTracker : MonoBehaviour {
 		
 		for (int i = 0; i < firedOrbs.Length; i++){
 			RaycastHit hit = new RaycastHit();
-			if (Physics.Raycast (transform.position, firedOrbs[i].transform.position-transform.position, out hit, 1000, ignoreEnemyMask)) {
+			if (Physics.Raycast (transform.position, firedOrbs[i].transform.position-transform.position, out hit, sightRange, ignoreEnemyMask)) {
 				if (hit.transform.gameObject == firedOrbs[i]){
 					attractionPoints.Add (firedOrbs[i]);	
 				}

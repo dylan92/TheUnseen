@@ -39,6 +39,7 @@ public class MouseController : MonoBehaviour {
         
         private bool isPaused = false;
 		private bool hideHUD = false;       
+		private float hitTime;
         private int ignorePlayerMask = ~( 1 << 8);
         
         public int maxHealth;
@@ -46,6 +47,7 @@ public class MouseController : MonoBehaviour {
         public float recoverRate;
 		public GameObject respawnPoint;
 		public GameObject deathScreen;
+		public AudioClip[] damageSounds;
 
         
         // Use this for initialization
@@ -67,7 +69,9 @@ public class MouseController : MonoBehaviour {
                         UpdatePrompts();
                         LeftMouseChecks (Time.deltaTime);
                         RightMouseChecks (Time.deltaTime);
-                        borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 1-(playerHealth/maxHealth));
+						if (Time.time - hitTime < 1.0f) {
+                        	borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 1-(Time.time - hitTime));
+						}
                         if(playerHealth < maxHealth) {
                                 playerHealth += recoverRate*Time.deltaTime;
                                 if(playerHealth > maxHealth) {
@@ -168,26 +172,31 @@ public class MouseController : MonoBehaviour {
                 }
         }
         
-        public void TakeDamage(float dmg) {
+        public IEnumerator TakeDamage(float dmg) {
                 if(playerHealth > 0) {
-                        playerHealth -= dmg;
+                	playerHealth -= dmg;
+					hitTime = Time.time;
+					audio.PlayOneShot(damageSounds[(int)playerHealth]);	
+					yield return new WaitForSeconds(0.5f);
                 } else {
-                       	StartCoroutine("Die");        
+                    StartCoroutine("Die");        
                 }
         }
         public IEnumerator Die() {
+			audio.PlayOneShot(damageSounds[2]);
+			borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 			deathScreen.SetActive(true);
 			hideHUD = true;
-			yield return new WaitForSeconds(3.0f);
 			transform.parent.position = respawnPoint.transform.position;
-		 	playerHealth = maxHealth;
+			playerHealth = maxHealth;
+			yield return new WaitForSeconds(3.0f);
 			deathScreen.SetActive(false);
 			hideHUD = false;
 			//Application.LoadLevel(Application.loadedLevel);
 		}
        
         void OnGUI(){                
-                GUI.color = new Color(1f , 1f, 1f, playerHealth/maxHealth);
+                //GUI.color = new Color(1f , 1f, 1f, playerHealth/maxHealth);
                 //GUI.DrawTexture(borderPos, borderTexture);
                 if (hideHUD == false) {
 	                if (crosshairTexture != null) {

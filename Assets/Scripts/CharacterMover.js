@@ -3,6 +3,7 @@
 #pragma downcast
 
 var FPSCamera : GameObject;
+var outOfBreath : AudioClip;
 
 // Does this script currently respond to input?
 var canControl : boolean = true;
@@ -386,8 +387,12 @@ private function UpdateFunction () {
 	}
 }
 
+var timeForSound : float;
 function FixedUpdate () {
-
+	
+	if (Time.time - timeForSound > 4.8) {
+		playSound = true;
+	}
 	FPSCamera.SendMessage("SetGrounded", grounded);
 	FPSCamera.SendMessage("SetCameraY", cameraLocalY);
 
@@ -646,6 +651,8 @@ function SetControllable (controllable : boolean) {
 
 // Project a direction onto elliptical quater segments based on forward, sideways, and backwards speed.
 // The function returns the length of the resulting vector.
+private var playSound : boolean = true;
+
 function MaxSpeedInDirection (desiredMovementDirection : Vector3) : float {
 	if (desiredMovementDirection == Vector3.zero)
 		return 0;
@@ -661,6 +668,12 @@ function MaxSpeedInDirection (desiredMovementDirection : Vector3) : float {
 				movement.isSprinting = true;
 			}else{
 				movement.isSprinting = false;
+				if (playSound) {
+					audio.PlayOneShot(outOfBreath);
+					timeForSound = Time.time;
+					playSound = false;
+				}
+				
 			}
 		}else{
 			movement.isSprinting = false;

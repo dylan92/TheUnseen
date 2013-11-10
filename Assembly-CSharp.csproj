@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\LightControlUnit.cs" />
      <Compile Include="Assets\Scripts\LightTracker.cs" />
      <Compile Include="Assets\Scripts\MouseController.cs" />
+     <Compile Include="Assets\Scripts\NOTES.cs" />
      <Compile Include="Assets\Scripts\NoninteractiveItem.cs" />
      <Compile Include="Assets\Scripts\PlayerCameraBob.cs" />
      <Compile Include="Assets\Scripts\RechargeStation.cs" />

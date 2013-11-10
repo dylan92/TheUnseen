@@ -18,6 +18,9 @@ public class PlayerCameraBob : MonoBehaviour {
         
         private float lastTimer = 0f;
         
+		public float maxMult = 1.25f;
+		public float minMult = .8f;
+	
         public void SetGrounded(bool newGrounded){
                 grounded = newGrounded;        
         }        
@@ -39,11 +42,11 @@ public class PlayerCameraBob : MonoBehaviour {
                                 waveslice = Mathf.Sin(timer); 
                         }
                         float mult = (player.GetComponent<CharacterController>().velocity.magnitude/maxSpeed);
-                        if (mult > 1.25f){
-                                mult = 1.25f;
+                        if (mult > maxMult){
+                                mult = maxMult;
                         }
-                        if (mult < .8f){
-                                mult = .8f;
+                        if (mult < minMult){
+                                mult = minMult;
                         }
                         timer = timer + (bobSpeed*mult);  
                 } 
@@ -51,14 +54,15 @@ public class PlayerCameraBob : MonoBehaviour {
                         timer = timer - (Mathf.PI * 3); 
                 }
                 if (waveslice != 0) { 
-                        if (lastTimer < footstepStartPoint && timer > footstepStartPoint){
+                        float mult = (player.GetComponent<CharacterController>().velocity.magnitude/maxSpeed);
+                        if (mult < minMult){
+                                mult = minMult;
+                        }
+			 			
+			 			if (lastTimer < footstepStartPoint && timer > footstepStartPoint){
                                 PlayFootStep();
                         }
                         lastTimer = timer;
-                        float mult = (player.GetComponent<CharacterController>().velocity.magnitude/maxSpeed);
-                        if (mult < .8f){
-                                mult = .8f;
-                        }
                         float translateChange = waveslice * bobAmplitude * (player.GetComponent<CharacterController>().velocity.magnitude/maxSpeed);
                         transform.localPosition = new Vector3(0, midpoint + translateChange, 0);
                 } 
@@ -69,8 +73,12 @@ public class PlayerCameraBob : MonoBehaviour {
         }
         
         void PlayFootStep(){
-                stepSource.GetComponent<Footsteps>().Footstep();
+                stepSource.GetComponent<Footsteps>().Footstep((player.GetComponent<CharacterController>().velocity.magnitude/maxSpeed));
         }
-                
+           
+		void Land(){
+			//should probably have Footsteps play some sort of landing noise
+		}
+	
         
 }

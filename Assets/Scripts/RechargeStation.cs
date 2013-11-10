@@ -19,6 +19,9 @@ public class RechargeStation : MonoBehaviour {
 	}
 	
 	void OnTriggerStay(Collider other) {
+		
+		//some sort of noise should probably be playing here, a recharge noise
+		
 		if (other.tag == "Player") {
 			emitter.target = aimingOrb.transform;
 			if ((Time.time - time) % chargeDelay == 0) {

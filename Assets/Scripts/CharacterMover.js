@@ -363,6 +363,9 @@ private function UpdateFunction () {
 	}
 	// We were not grounded but just landed on something
 	else if (!grounded && IsGroundedTest()) {
+	
+		playerCamera.SendMessage("Land", SendMessageOptions.DontRequireReceiver);
+	
 		grounded = true;
 		jumping.jumping = false;
 		SubtractNewPlatformVelocity();

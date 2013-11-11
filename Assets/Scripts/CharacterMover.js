@@ -106,10 +106,10 @@ class CharacterMotorJumping {
 	var enabled : boolean = true;
 
 	// How high do we jump when pressing jump and letting go immediately
-	var baseHeight : float = .75;
+	var baseHeight : float = 1;
 	
 	// We add extraHeight units (meters) on top when holding the button down longer while jumping
-	var extraHeight : float = 1.5;
+	var extraHeight : float = 1;
 	
 	// How much does the character jump out perpendicular to the surface on walkable surfaces?
 	// 0 means a fully vertical jump and 1 means fully perpendicular.
@@ -226,7 +226,6 @@ function Awake () {
 }
 
 function CrouchCharacter() {
-print(cameraLocalY);
 	if (cameraLocalY > crouchHeight){
 		cameraLocalY -= crouchSpeed*Time.deltaTime;
 	}
@@ -365,7 +364,7 @@ private function UpdateFunction () {
 	// We were not grounded but just landed on something
 	else if (!grounded && IsGroundedTest()) {
 	
-		playerCamera.SendMessage("Land", SendMessageOptions.DontRequireReceiver);
+		BroadcastMessage("Land", velocity.y, SendMessageOptions.DontRequireReceiver);
 	
 		grounded = true;
 		jumping.jumping = false;

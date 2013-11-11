@@ -13,7 +13,7 @@ public class LightTracker : MonoBehaviour {
 	public float ageFactor;
 	public float ageDistance;
 	
-	public float minSoundIntensityRequired;
+	public float minSoundAttractionRequired;
 	
 	public float focusMax;
 	
@@ -42,7 +42,7 @@ public class LightTracker : MonoBehaviour {
 		List<GameObject> attractionPoints = new List<GameObject>();
 		
 		for (int i = 0; i < soundOrbs.Length; i++){
-			if (soundOrbs[i].GetComponent<SoundOrb>().intensity > minSoundIntensityRequired){
+			if (CalculateAttraction(soundOrbs[i]) > minSoundAttractionRequired){
 				attractionPoints.Add(soundOrbs[i]);	
 			}
 		}
@@ -97,7 +97,11 @@ public class LightTracker : MonoBehaviour {
 				}else if (target.GetComponent<FiredOrb>() != null){
 					target.GetComponent<FiredOrb>().age += ageFactor*Time.deltaTime;
 				}
-			}	
+			}
+					
+			
+			print (CalculateAttraction(target));
+			
 			lastTarget = target;
 			mover.UpdateTarget(target);
 		}

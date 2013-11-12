@@ -6,6 +6,7 @@ public class LightControlUnit : MonoBehaviour {
 	public GameObject activate;
 	public GameObject deactivate;
 	public GameObject greenOrb;
+	public AudioClip activateSound;
 	public float maxIntensity;
 	public float minRange;
 	public float maxRange;
@@ -20,7 +21,7 @@ public class LightControlUnit : MonoBehaviour {
 		this.light.range = ((power/maxPower)*(maxRange-minRange))+minRange;
 	}
 
-	void OnTriggerEnter (Collider other) {
+	IEnumerator OnTriggerEnter (Collider other) {
 		if (power < maxPower){
 			GameObject chargeOrb = other.transform.gameObject;
 			if (chargeOrb.tag == "firedOrb"){
@@ -32,6 +33,8 @@ public class LightControlUnit : MonoBehaviour {
 					greenOrb.SetActive(true);
 					activate.SetActive(true);
 					deactivate.SetActive(false);
+					audio.PlayOneShot(activateSound);
+					yield return new WaitForSeconds(0.4f);
 					this.gameObject.SetActive(false);
 				}
 				Destroy (chargeOrb);

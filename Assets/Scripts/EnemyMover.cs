@@ -5,6 +5,8 @@ using Pathfinding;
 
 public class EnemyMover : MonoBehaviour {
 	
+	public AudioClip walkSound;
+	public AudioClip attackSound;
 	public GameObject target;
 	private Vector3 targetPosition;
 	
@@ -39,6 +41,9 @@ public class EnemyMover : MonoBehaviour {
 			throw new System.Exception("declare node dist in EnemyMover.cs, stored in the graphs");        
 		}
 		nodeMaxDist = Mathf.Sqrt(2*(nodeDist*nodeDist));
+		audio.clip = walkSound;
+		audio.loop = true;
+		audio.Play();
 	}
 	
 	public void OnPathComplete (Path p) {

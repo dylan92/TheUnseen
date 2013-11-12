@@ -5,6 +5,7 @@ public class GeneratorDoorOverride : MonoBehaviour {
 
 	public GeneratorDoorControl doorControl;
 	public GameObject greenOrb;
+	public AudioClip activateSound;
 	public float maxIntensity;
 	public float minRange;
 	public float maxRange;
@@ -19,7 +20,7 @@ public class GeneratorDoorOverride : MonoBehaviour {
 		this.light.range = ((power/maxPower)*(maxRange-minRange))+minRange;
 	}
 
-	void OnTriggerEnter (Collider other) {
+	IEnumerator OnTriggerEnter (Collider other) {
 		if (power < maxPower){
 			GameObject chargeOrb = other.transform.gameObject;
 			if (chargeOrb.tag == "firedOrb"){
@@ -30,6 +31,8 @@ public class GeneratorDoorOverride : MonoBehaviour {
 					power = maxPower;
 					greenOrb.SetActive(true);
 					doorControl.Override();
+					audio.PlayOneShot(activateSound);
+					yield return new WaitForSeconds(0.4f);
 					this.gameObject.SetActive(false);
 				}
 				Destroy (chargeOrb);

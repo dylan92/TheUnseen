@@ -6,7 +6,7 @@ public class AimingOrb : MonoBehaviour {
 	public float energy = 10.0f;  // Energy is used to create the orb
 	public float maxEnergy = 10.0f;
 	public float power = 0;	
-	
+	public Transform firePos;
 	public GUITexture energyBar;
 	public GUITexture energyBarBase;
 	public GameObject shootingOrb;
@@ -96,7 +96,7 @@ public class AimingOrb : MonoBehaviour {
 			shootingOrb.GetComponent<FiredOrb>().intensity = ratio*(maxIntensity-minIntensity)+minIntensity;		
 			shootingOrb.GetComponent<FiredOrb>().range = ratio*(maxRange-minRange)+minRange;	
 			shootingOrb.GetComponent<FiredOrb>().speed = ratio*(maxSpeed-minSpeed)+minSpeed;
-			GameObject bulletSpawn = (GameObject)Instantiate(shootingOrb, transform.position, cam.transform.rotation);
+			GameObject bulletSpawn = (GameObject)Instantiate(shootingOrb, firePos.position, cam.transform.rotation);
 		}else {
 			gameObject.SetActive(false);
 			energy = 0.0f;	

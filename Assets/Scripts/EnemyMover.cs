@@ -8,6 +8,7 @@ public class EnemyMover : MonoBehaviour {
 	public AudioClip walkSound;
 	public AudioClip attackSound;
 	public GameObject target;
+	private GameObject initialTarget;
 	private Vector3 targetPosition;
 	
 	public float wanderSpeed;
@@ -33,6 +34,8 @@ public class EnemyMover : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		initialTarget = target;
+		
 		seeker = GetComponent<Seeker>();
 		state = states.WANDER;
 		targetPosition = transform.position;

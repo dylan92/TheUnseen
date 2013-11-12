@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NoninteractiveItem : MonoBehaviour {
-
-	public float noisePotential;	
+public class NoninteractiveItem : SoundItems {
 	
 	// Use this for initialization
 	void Start () {

@@ -1,17 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AimingOrb.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RyansSlider.js">
     <Files>
-      <File FileName="Assets\Scripts\LightControlUnit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GeneratorDoorOverride.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Footsteps.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterMover.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerCameraBob.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NoninteractiveItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\InteractiveItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI.cs" Line="76" Column="71" />
       <File FileName="Assets\Scripts\LightTracker.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyMover.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\AimingOrb.cs" Line="98" Column="43" />
+      <File FileName="Assets\Scripts\Footsteps.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SoundItems.cs" Line="8" Column="33" />
+      <File FileName="Assets\Scripts\SoundSource.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\SoundOrb.cs" Line="25" Column="4" />
+      <File FileName="Assets\Scripts\RyansSlider.js" Line="51" Column="6" />
+      <File FileName="Assets\Scripts\AdjustVisibility.cs" Line="25" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

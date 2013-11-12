@@ -17,8 +17,8 @@ public class Footsteps : MonoBehaviour {
 	public float minLandIntensity = .8f;
 	public float maxLandIntensity = .95f;
 	
-	public float stepSoundOrbMaxPower = 5f;
-	public float landSoundOrbMaxPower = 10f;
+	public float stepSoundOrbMaxPower = 3f;
+	public float landSoundOrbMaxPower = 6f;
 	
 	public void Footstep(float intensity) {
 		intensity -= intensityDecrease;

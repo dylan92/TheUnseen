@@ -13,8 +13,9 @@ public class UI : MonoBehaviour {
 	public EnemyMover enemyMover;
 	public Light directionalLight;
 
-	
+	public GameObject ambientLightSliderButton;	
 	public GUIText ambientLightSlider;
+	public GameObject directionalLightSliderButton;
 	public GUIText directionalLightSlider;
 	
 	// Aiming orb
@@ -61,6 +62,8 @@ public class UI : MonoBehaviour {
 	
 	private List<GameAttr> valueMap = new List<GameAttr>();
 	
+	private List<float> backupVals = new List<float>();
+	
 	private int ambientLightValue;
 	private int directionalLightValue;
 	// Use this for initialization
@@ -68,6 +71,13 @@ public class UI : MonoBehaviour {
 	
 		CreateMap ();
 		UpdateText ();
+		
+		ambientLightSliderButton.SendMessage("setValue", RenderSettings.ambientLight.r*255f);
+		directionalLightSliderButton.SendMessage("setValue", directionalLight.intensity*50f);
+	}
+	
+	void OnDestroy(){
+		
 	}
 	
 	void CreateMap (){

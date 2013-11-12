@@ -182,6 +182,7 @@ public class MouseController : MonoBehaviour {
                     StartCoroutine("Die");        
                 }
         }
+	
         public IEnumerator Die() {
 			audio.PlayOneShot(damageSounds[2]);
 			borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
@@ -189,6 +190,13 @@ public class MouseController : MonoBehaviour {
 			hideHUD = true;
 			transform.parent.position = respawnPoint.transform.position;
 			playerHealth = maxHealth;
+			GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		
+			for (int i = 0; i < enemies.Length; i++){
+				EnemyMover mover = enemies[i].GetComponent<EnemyMover>();
+				mover.UpdateTarget(mover.GetNearestWaypoint());
+			}
+		
 			yield return new WaitForSeconds(3.0f);
 			deathScreen.SetActive(false);
 			hideHUD = false;

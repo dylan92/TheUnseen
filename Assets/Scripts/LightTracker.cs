@@ -98,10 +98,7 @@ public class LightTracker : MonoBehaviour {
 					target.GetComponent<FiredOrb>().age += ageFactor*Time.deltaTime;
 				}
 			}
-					
-			
-			print (CalculateAttraction(target));
-			
+								
 			lastTarget = target;
 			mover.UpdateTarget(target);
 		}

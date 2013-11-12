@@ -5,6 +5,9 @@ public class AdjustVisibility : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject playerHud;
+	
+	public GameObject menuAmbientButton;
+	
 	public Light directionalLight;
 	public GUIText ambientLightSlider;
 	public GUIText directionalLightSlider;
@@ -25,7 +28,7 @@ public class AdjustVisibility : MonoBehaviour {
 	// Update is called once per frame
 	public void Message(string msg) {
 		player.SetActive(true);
-		playerHud.SetActive(true);
-		this.gameObject.SetActive(false);
+		playerHud.SetActive(true);		
+		this.gameObject.SetActive(false);		
 	}
 }

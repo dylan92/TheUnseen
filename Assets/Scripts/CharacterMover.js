@@ -4,7 +4,7 @@
 
 var FPSCamera : GameObject;
 var outOfBreath : AudioClip;
-
+var jumpSounds : AudioClip[];
 // Does this script currently respond to input?
 var canControl : boolean = true;
 
@@ -479,9 +479,12 @@ private function ApplyGravityAndJumping (velocity : Vector3) {
 		jumping.lastButtonDownTime = -100;
 	}
 	
-	if (inputJump && jumping.lastButtonDownTime < 0 && canControl)
+	if (inputJump && jumping.lastButtonDownTime < 0 && canControl) {
+		if (grounded) {
+			audio.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.length)]);
+		}
 		jumping.lastButtonDownTime = Time.time;
-	
+	}
 	if (grounded)
 		velocity.y = Mathf.Min(0, velocity.y) - movement.gravity * Time.deltaTime;
 	else {

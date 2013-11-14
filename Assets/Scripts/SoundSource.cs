@@ -9,6 +9,7 @@ public class SoundSource : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		audio.clip = soundToPlay;
 		audio.volume = 1;
 		audio.Play();
 	}

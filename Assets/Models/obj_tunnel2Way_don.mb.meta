@@ -29,6 +29,15 @@ ModelImporter:
     100046: pPlane3
     100048: pPlane4
     100050: pPlane6
+    100052: polySurface2
+    100054: polySurface3
+    100056: polySurface4
+    100058: polySurface5
+    100060: polySurface6
+    100062: polySurface7
+    100064: polySurface8
+    100066: polySurface9
+    100068: transform1
     400000: group
     400002: group21
     400004: group22
@@ -55,6 +64,15 @@ ModelImporter:
     400046: pPlane3
     400048: pPlane4
     400050: pPlane6
+    400052: polySurface2
+    400054: polySurface3
+    400056: polySurface4
+    400058: polySurface5
+    400060: polySurface6
+    400062: polySurface7
+    400064: polySurface8
+    400066: polySurface9
+    400068: transform1
     2300000: pasted__pasted__pasted__pPlane3
     2300002: pasted__pasted__pasted__pPlane4
     2300004: pasted__pasted__pPlane6
@@ -63,6 +81,14 @@ ModelImporter:
     2300010: pPlane3
     2300012: pPlane4
     2300014: pPlane6
+    2300016: polySurface2
+    2300018: polySurface3
+    2300020: polySurface4
+    2300022: polySurface5
+    2300024: polySurface6
+    2300026: polySurface7
+    2300028: polySurface8
+    2300030: polySurface9
     3300000: pasted__pasted__pasted__pPlane3
     3300002: pasted__pasted__pasted__pPlane4
     3300004: pasted__pasted__pPlane6
@@ -71,6 +97,14 @@ ModelImporter:
     3300010: pPlane3
     3300012: pPlane4
     3300014: pPlane6
+    3300016: polySurface2
+    3300018: polySurface3
+    3300020: polySurface4
+    3300022: polySurface5
+    3300024: polySurface6
+    3300026: polySurface7
+    3300028: polySurface8
+    3300030: polySurface9
     4300000: pPlane3
     4300002: pPlane4
     4300004: pPlane6
@@ -79,6 +113,14 @@ ModelImporter:
     4300010: pasted__pasted__pPlane6
     4300012: pCube7
     4300014: pasted__pCube6
+    4300016: polySurface2
+    4300018: polySurface3
+    4300020: polySurface4
+    4300022: polySurface5
+    4300024: polySurface6
+    4300026: polySurface7
+    4300028: polySurface8
+    4300030: polySurface9
     6400000: pasted__pasted__pasted__pPlane3
     6400002: pasted__pasted__pasted__pPlane4
     6400004: pasted__pasted__pPlane6
@@ -87,6 +129,14 @@ ModelImporter:
     6400010: pPlane3
     6400012: pPlane4
     6400014: pPlane6
+    6400016: polySurface2
+    6400018: polySurface3
+    6400020: polySurface4
+    6400022: polySurface5
+    6400024: polySurface6
+    6400026: polySurface7
+    6400028: polySurface8
+    6400030: polySurface9
     9500000: //RootNode
   materials:
     importMaterials: 1

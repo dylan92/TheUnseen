@@ -48,7 +48,7 @@ public class PlayerCameraBob : MonoBehaviour {
                         if (mult < minMult){
                                 mult = minMult;
                         }
-                        timer = timer + (bobSpeed*mult);  
+                        timer = timer + ((bobSpeed*Time.deltaTime*mult) * 2);  // i added this * 2 thing here
                 } 
                 if (timer > Mathf.PI * 3) { 
                         timer = timer - (Mathf.PI * 3); 

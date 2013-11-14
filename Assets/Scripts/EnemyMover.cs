@@ -5,6 +5,7 @@ using Pathfinding;
 
 public class EnemyMover : MonoBehaviour {
 	
+	public GameObject creature;
 	public AudioClip walkSound;
 	public AudioClip attackSound;
 	public GameObject target;
@@ -34,6 +35,7 @@ public class EnemyMover : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		creature.animation.CrossFade("Walk");
 		initialTarget = target;
 		
 		seeker = GetComponent<Seeker>();
@@ -156,10 +158,13 @@ public class EnemyMover : MonoBehaviour {
 		if (target != _target){
 			if (_target.tag == "Waypoint"){
 				state = states.WANDER;	
+				creature.animation.CrossFade("Walk");
 			}else if (_target.tag == "Player"){
 				state = states.CHASEPLAYER;	
+				creature.animation.CrossFade("Run");
 			}else{
 				state = states.CHASE;	
+				creature.animation.CrossFade("Run");
 			}
 			target = _target;
 						

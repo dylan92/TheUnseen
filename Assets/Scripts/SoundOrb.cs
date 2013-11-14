@@ -9,10 +9,14 @@ public class SoundOrb : MonoBehaviour {
 	public float dieThreshold;
 
 	public float age = 1;	
+	//public AudioClip sound;
 	
 	// Use this for initialization
 	void Start () {
 		transform.localScale = new Vector3(intensity, intensity, intensity);
+		//if (sound != null) {
+		//	audio.PlayOneShot(sound);
+		//}
 	}
 	
 	// Update is called once per frame

@@ -37,7 +37,7 @@ public class MouseController : MonoBehaviour {
         
         public List<string> prompts;
         
-        private bool isPaused = false;
+        public bool isPaused = false;
 		private bool hideHUD = false;       
 		private float hitTime;
         private int ignorePlayerMask = ~( 1 << 8);
@@ -64,8 +64,13 @@ public class MouseController : MonoBehaviour {
         // Update is called once per frame
         void Update () {
                 if (!isPaused) {
-                        Screen.showCursor = false;
+                        gui.SetActive(false);
+                        mouseLook1.enabled = true;
+                        mouseLook2.enabled = true;
+                        Time.timeScale = 1.0f;
+						this.gameObject.GetComponent<BlurEffect>().enabled = false;
                         Screen.lockCursor = true;
+                        Screen.showCursor = false;
                         UpdatePrompts();
                         LeftMouseChecks (Time.deltaTime);
                         RightMouseChecks (Time.deltaTime);
@@ -87,13 +92,15 @@ public class MouseController : MonoBehaviour {
                                 Time.timeScale = 1.0f;
                                 Screen.lockCursor = true;
                                 Screen.showCursor = false;
+								this.gameObject.GetComponent<BlurEffect>().enabled = false;
                         } else {
                                 gui.SetActive(true);
                                 mouseLook1.enabled = false;
                                 mouseLook2.enabled = false;
                                 Time.timeScale = 0.0f;
                                 Screen.lockCursor = false;
-                                Screen.showCursor = true;        
+                                Screen.showCursor = true;     
+								this.gameObject.GetComponent<BlurEffect>().enabled = true;
                         }
                         isPaused = !isPaused;        
                 }
@@ -176,7 +183,7 @@ public class MouseController : MonoBehaviour {
                 if(playerHealth > 0) {
                 	playerHealth -= dmg;
 					hitTime = Time.time;
-					audio.PlayOneShot(damageSounds[(int)playerHealth]);	
+					audio.PlayOneShot(damageSounds[(int)playerHealth], AudioListener.volume);	
 					yield return new WaitForSeconds(0.5f);
                 } else {
                     StartCoroutine("Die");        
@@ -184,7 +191,7 @@ public class MouseController : MonoBehaviour {
         }
 	
         public IEnumerator Die() {
-			audio.PlayOneShot(damageSounds[2]);
+			audio.PlayOneShot(damageSounds[2], AudioListener.volume);
 			borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
 			deathScreen.SetActive(true);
 			hideHUD = true;

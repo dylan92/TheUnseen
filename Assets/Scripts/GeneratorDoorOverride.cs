@@ -31,7 +31,7 @@ public class GeneratorDoorOverride : MonoBehaviour {
 					power = maxPower;
 					greenOrb.SetActive(true);
 					doorControl.Override();
-					audio.PlayOneShot(activateSound);
+					audio.PlayOneShot(activateSound, AudioListener.volume);
 					yield return new WaitForSeconds(0.4f);
 					this.gameObject.SetActive(false);
 				}

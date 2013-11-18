@@ -54,6 +54,15 @@ function OnMouseUp() {
 	}
 }
 
+function Select() {
+	ResetButtons();
+	selected = true;
+	guiTexture.texture = hoverTexture;
+	if (receiver) {
+		receiver.SendMessage("Message", message);
+	}
+}
+
 // Resets all of the buttons in this radio button group to unselected
 function ResetButtons() {
 	for (var i : int = 0; i < otherOptions.length; i++) {

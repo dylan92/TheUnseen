@@ -33,7 +33,7 @@ public class LightControlUnit : MonoBehaviour {
 					greenOrb.SetActive(true);
 					activate.SetActive(true);
 					deactivate.SetActive(false);
-					audio.PlayOneShot(activateSound);
+					audio.PlayOneShot(activateSound, AudioListener.volume);
 					yield return new WaitForSeconds(0.4f);
 					this.gameObject.SetActive(false);
 				}

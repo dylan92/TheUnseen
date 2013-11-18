@@ -62,4 +62,20 @@ function OnMouseUp() {
 			receiver.SendMessage("Message", uncheckedMessage);
 	}
 }
+
+function Select() {
+	selected = true;
+	guiTexture.texture = checkedTexture;
+	if (receiver) {
+		receiver.SendMessage("Message", checkedMessage);
+	}
+}
+
+function Deselect() {
+	selected = false;
+	guiTexture.texture = defaultTexture;
+	if (receiver) {
+		receiver.SendMessage("Message", uncheckedMessage);
+	}
+}
  

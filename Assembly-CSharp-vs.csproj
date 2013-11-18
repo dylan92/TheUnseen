@@ -67,11 +67,16 @@
      <Compile Include="Assets\Scripts\InteractiveItem.cs" />
      <Compile Include="Assets\Scripts\LightControlUnit.cs" />
      <Compile Include="Assets\Scripts\LightTracker.cs" />
+     <Compile Include="Assets\Scripts\MainMenuGUI.cs" />
+     <Compile Include="Assets\Scripts\MainMenuOptions.cs" />
      <Compile Include="Assets\Scripts\MouseController.cs" />
      <Compile Include="Assets\Scripts\NOTES.cs" />
      <Compile Include="Assets\Scripts\NoninteractiveItem.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerCameraBob.cs" />
      <Compile Include="Assets\Scripts\RechargeStation.cs" />
+     <Compile Include="Assets\Scripts\RotateCamera.cs" />
+     <Compile Include="Assets\Scripts\SavedVaribales.cs" />
      <Compile Include="Assets\Scripts\SoundItems.cs" />
      <Compile Include="Assets\Scripts\SoundOrb.cs" />
      <Compile Include="Assets\Scripts\SoundSource.cs" />

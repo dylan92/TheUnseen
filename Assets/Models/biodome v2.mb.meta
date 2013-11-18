@@ -1,0 +1,462 @@
+fileFormatVersion: 2
+guid: 7a4266fc03526c84c8db7c61e4bb12f9
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: distanceDimension1
+    100004: distanceDimension1 1
+    100006: distanceDimension1 2
+    100008: distanceDimension1 3
+    100010: group1
+    100012: group2
+    100014: group24
+    100016: group25
+    100018: group26
+    100020: group27
+    100022: group27 1
+    100024: group27 2
+    100026: group27 3
+    100028: group28
+    100030: group28 1
+    100032: group28 2
+    100034: group28 3
+    100036: group29
+    100038: group29 1
+    100040: group29 2
+    100042: group29 3
+    100044: group30
+    100046: group30 1
+    100048: group30 2
+    100050: group30 3
+    100052: group31
+    100054: group32
+    100056: group33
+    100058: group34
+    100060: group35
+    100062: group36
+    100064: group37
+    100066: group38
+    100068: group39
+    100070: group40
+    100072: group41
+    100074: group42
+    100076: group43
+    100078: group44
+    100080: group45
+    100082: group46
+    100084: group47
+    100086: locator1
+    100088: locator2
+    100090: obj_tunnelStraight_don_group21
+    100092: obj_tunnelStraight_don_group22
+    100094: obj_tunnelStraight_don_group23
+    100096: obj_tunnelStraight_don_group24
+    100098: obj_tunnelStraight_don_pPlane7
+    100100: obj_tunnelStraight_don_pPlane9
+    100102: pasted__pasted__pPlane4
+    100104: pasted__pasted__pPlane7
+    100106: pasted__pPlane9
+    100108: pCube7
+    100110: pCylinder1
+    100112: pCylinder10
+    100114: pCylinder11
+    100116: pCylinder2
+    100118: pCylinder3
+    100120: pCylinder5
+    100122: pCylinder6
+    100124: pCylinder7
+    100126: pCylinder8
+    100128: pCylinder9
+    100130: polySurface1
+    100132: polySurface1 1
+    100134: polySurface1 2
+    100136: polySurface10
+    100138: polySurface2
+    100140: polySurface2 1
+    100142: polySurface3
+    100144: polySurface6
+    100146: polySurface7
+    100148: polySurface8
+    100150: polySurface9
+    100152: pPipe1
+    100154: pPlane11
+    100156: pPlane12
+    100158: pSphere10
+    100160: pSphere3
+    100162: pSphere4
+    100164: pSphere5
+    100166: pSphere6
+    100168: pSphere7
+    100170: pSphere8
+    100172: pSphere9
+    100174: pTorus1
+    100176: pTorus30
+    100178: pTorus31
+    100180: pTorus32
+    100182: pTorus33
+    100184: pTorus34
+    100186: pTorus35
+    100188: pTorus36
+    100190: pTorus37
+    100192: pTorus38
+    100194: pTorus39
+    100196: sbeam:pTorus30
+    100198: Taurus:polySurface1
+    100200: transform1
+    100202: transform2
+    100204: transform3
+    100206: transform4
+    100208: transform5
+    100210: transform6
+    100212: upper_dome:pSphere4
+    100214: wallsection:pSphere3
+    400000: //RootNode
+    400002: distanceDimension1
+    400004: distanceDimension1 1
+    400006: distanceDimension1 2
+    400008: distanceDimension1 3
+    400010: group1
+    400012: group2
+    400014: group24
+    400016: group25
+    400018: group26
+    400020: group27
+    400022: group27 1
+    400024: group27 2
+    400026: group27 3
+    400028: group28
+    400030: group28 1
+    400032: group28 2
+    400034: group28 3
+    400036: group29
+    400038: group29 1
+    400040: group29 2
+    400042: group29 3
+    400044: group30
+    400046: group30 1
+    400048: group30 2
+    400050: group30 3
+    400052: group31
+    400054: group32
+    400056: group33
+    400058: group34
+    400060: group35
+    400062: group36
+    400064: group37
+    400066: group38
+    400068: group39
+    400070: group40
+    400072: group41
+    400074: group42
+    400076: group43
+    400078: group44
+    400080: group45
+    400082: group46
+    400084: group47
+    400086: locator1
+    400088: locator2
+    400090: obj_tunnelStraight_don_group21
+    400092: obj_tunnelStraight_don_group22
+    400094: obj_tunnelStraight_don_group23
+    400096: obj_tunnelStraight_don_group24
+    400098: obj_tunnelStraight_don_pPlane7
+    400100: obj_tunnelStraight_don_pPlane9
+    400102: pasted__pasted__pPlane4
+    400104: pasted__pasted__pPlane7
+    400106: pasted__pPlane9
+    400108: pCube7
+    400110: pCylinder1
+    400112: pCylinder10
+    400114: pCylinder11
+    400116: pCylinder2
+    400118: pCylinder3
+    400120: pCylinder5
+    400122: pCylinder6
+    400124: pCylinder7
+    400126: pCylinder8
+    400128: pCylinder9
+    400130: polySurface1
+    400132: polySurface1 1
+    400134: polySurface1 2
+    400136: polySurface10
+    400138: polySurface2
+    400140: polySurface2 1
+    400142: polySurface3
+    400144: polySurface6
+    400146: polySurface7
+    400148: polySurface8
+    400150: polySurface9
+    400152: pPipe1
+    400154: pPlane11
+    400156: pPlane12
+    400158: pSphere10
+    400160: pSphere3
+    400162: pSphere4
+    400164: pSphere5
+    400166: pSphere6
+    400168: pSphere7
+    400170: pSphere8
+    400172: pSphere9
+    400174: pTorus1
+    400176: pTorus30
+    400178: pTorus31
+    400180: pTorus32
+    400182: pTorus33
+    400184: pTorus34
+    400186: pTorus35
+    400188: pTorus36
+    400190: pTorus37
+    400192: pTorus38
+    400194: pTorus39
+    400196: sbeam:pTorus30
+    400198: Taurus:polySurface1
+    400200: transform1
+    400202: transform2
+    400204: transform3
+    400206: transform4
+    400208: transform5
+    400210: transform6
+    400212: upper_dome:pSphere4
+    400214: wallsection:pSphere3
+    2300000: obj_tunnelStraight_don_pPlane9
+    2300002: pasted__pasted__pPlane4
+    2300004: pCylinder1
+    2300006: pCylinder10
+    2300008: pCylinder11
+    2300010: pCylinder2
+    2300012: pCylinder3
+    2300014: pCylinder5
+    2300016: pCylinder6
+    2300018: pCylinder7
+    2300020: pCylinder8
+    2300022: pCylinder9
+    2300024: polySurface1
+    2300026: polySurface1 1
+    2300028: polySurface1 2
+    2300030: polySurface10
+    2300032: polySurface2
+    2300034: polySurface2 1
+    2300036: polySurface3
+    2300038: polySurface6
+    2300040: polySurface7
+    2300042: polySurface8
+    2300044: polySurface9
+    2300046: pPipe1
+    2300048: pSphere10
+    2300050: pSphere3
+    2300052: pSphere4
+    2300054: pSphere5
+    2300056: pSphere6
+    2300058: pSphere7
+    2300060: pSphere8
+    2300062: pSphere9
+    2300064: pTorus1
+    2300066: pTorus30
+    2300068: pTorus31
+    2300070: pTorus32
+    2300072: pTorus33
+    2300074: pTorus34
+    2300076: pTorus35
+    2300078: pTorus36
+    2300080: pTorus37
+    2300082: pTorus38
+    2300084: pTorus39
+    2300086: sbeam:pTorus30
+    2300088: Taurus:polySurface1
+    2300090: upper_dome:pSphere4
+    2300092: wallsection:pSphere3
+    3300000: obj_tunnelStraight_don_pPlane9
+    3300002: pasted__pasted__pPlane4
+    3300004: pCylinder1
+    3300006: pCylinder10
+    3300008: pCylinder11
+    3300010: pCylinder2
+    3300012: pCylinder3
+    3300014: pCylinder5
+    3300016: pCylinder6
+    3300018: pCylinder7
+    3300020: pCylinder8
+    3300022: pCylinder9
+    3300024: polySurface1
+    3300026: polySurface1 1
+    3300028: polySurface1 2
+    3300030: polySurface10
+    3300032: polySurface2
+    3300034: polySurface2 1
+    3300036: polySurface3
+    3300038: polySurface6
+    3300040: polySurface7
+    3300042: polySurface8
+    3300044: polySurface9
+    3300046: pPipe1
+    3300048: pSphere10
+    3300050: pSphere3
+    3300052: pSphere4
+    3300054: pSphere5
+    3300056: pSphere6
+    3300058: pSphere7
+    3300060: pSphere8
+    3300062: pSphere9
+    3300064: pTorus1
+    3300066: pTorus30
+    3300068: pTorus31
+    3300070: pTorus32
+    3300072: pTorus33
+    3300074: pTorus34
+    3300076: pTorus35
+    3300078: pTorus36
+    3300080: pTorus37
+    3300082: pTorus38
+    3300084: pTorus39
+    3300086: sbeam:pTorus30
+    3300088: Taurus:polySurface1
+    3300090: upper_dome:pSphere4
+    3300092: wallsection:pSphere3
+    4300000: pCylinder1
+    4300002: pCylinder2
+    4300004: pCylinder3
+    4300006: pCylinder5
+    4300008: pCylinder6
+    4300010: pCylinder7
+    4300012: pCylinder8
+    4300014: pCylinder9
+    4300016: pasted__pasted__pPlane4
+    4300018: pTorus1
+    4300020: obj_tunnelStraight_don_pPlane9
+    4300022: wallsection:pSphere3
+    4300024: pSphere3
+    4300026: pSphere4
+    4300028: pSphere5
+    4300030: upper_dome:pSphere4
+    4300032: polySurface1
+    4300034: Taurus:polySurface1
+    4300036: polySurface1
+    4300038: polySurface2
+    4300040: polySurface1
+    4300042: polySurface2
+    4300044: polySurface6
+    4300046: polySurface7
+    4300048: polySurface3
+    4300050: polySurface8
+    4300052: polySurface9
+    4300054: polySurface10
+    4300056: sbeam:pTorus30
+    4300058: pTorus30
+    4300060: pTorus31
+    4300062: pTorus32
+    4300064: pTorus33
+    4300066: pTorus34
+    4300068: pTorus35
+    4300070: pTorus36
+    4300072: pTorus37
+    4300074: pTorus38
+    4300076: pTorus39
+    4300078: pPipe1
+    4300080: pCylinder10
+    4300082: pSphere6
+    4300084: pSphere7
+    4300086: pSphere8
+    4300088: pSphere9
+    4300090: pSphere10
+    4300092: pCylinder11
+    6400000: obj_tunnelStraight_don_pPlane9
+    6400002: pasted__pasted__pPlane4
+    6400004: pCylinder1
+    6400006: pCylinder10
+    6400008: pCylinder11
+    6400010: pCylinder2
+    6400012: pCylinder3
+    6400014: pCylinder5
+    6400016: pCylinder6
+    6400018: pCylinder7
+    6400020: pCylinder8
+    6400022: pCylinder9
+    6400024: polySurface1
+    6400026: polySurface1 1
+    6400028: polySurface1 2
+    6400030: polySurface10
+    6400032: polySurface2
+    6400034: polySurface2 1
+    6400036: polySurface3
+    6400038: polySurface6
+    6400040: polySurface7
+    6400042: polySurface8
+    6400044: polySurface9
+    6400046: pPipe1
+    6400048: pSphere10
+    6400050: pSphere3
+    6400052: pSphere4
+    6400054: pSphere5
+    6400056: pSphere6
+    6400058: pSphere7
+    6400060: pSphere8
+    6400062: pSphere9
+    6400064: pTorus1
+    6400066: pTorus30
+    6400068: pTorus31
+    6400070: pTorus32
+    6400072: pTorus33
+    6400074: pTorus34
+    6400076: pTorus35
+    6400078: pTorus36
+    6400080: pTorus37
+    6400082: pTorus38
+    6400084: pTorus39
+    6400086: sbeam:pTorus30
+    6400088: Taurus:polySurface1
+    6400090: upper_dome:pSphere4
+    6400092: wallsection:pSphere3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 

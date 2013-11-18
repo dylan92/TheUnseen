@@ -481,7 +481,7 @@ private function ApplyGravityAndJumping (velocity : Vector3) {
 	
 	if (inputJump && jumping.lastButtonDownTime < 0 && canControl) {
 		if (grounded) {
-			audio.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.length)]);
+			audio.PlayOneShot(jumpSounds[Random.Range(0, jumpSounds.length)], AudioListener.volume);
 		}
 		jumping.lastButtonDownTime = Time.time;
 	}
@@ -671,7 +671,7 @@ function MaxSpeedInDirection (desiredMovementDirection : Vector3) : float {
 			}else{
 				movement.isSprinting = false;
 				if (playSound) {
-					audio.PlayOneShot(outOfBreath);
+					audio.PlayOneShot(outOfBreath, AudioListener.volume);
 					timeForSound = Time.time;
 					playSound = false;
 				}

@@ -31,6 +31,14 @@ public class Door : Activateable {
 		StartCoroutine(OpenDoor());
 	}
 	
+	public override void Deactivate(){
+		combinedY = transform.position.y;
+		
+		timeOpening = 0;
+		
+		StartCoroutine(CloseDoor());
+	}
+	
 	IEnumerator OpenDoor(){
 		audio.Play();
 		isOpen = true;
@@ -38,6 +46,21 @@ public class Door : Activateable {
 			timeOpening += timeInterval;
 			topDoor.transform.position = Vector3.Lerp (originalTop, goalTop, timeOpening/timeToOpen);
 			bottomDoor.transform.position = Vector3.Lerp (originalBottom, goalBottom, timeOpening/timeToOpen);
+			yield return new WaitForSeconds(timeInterval);
+		}		
+		
+		Bounds oldBounds = collider.bounds;
+		transform.position = new Vector3(transform.position.x, combinedY+(-3*distToMove), transform.position.z);
+		AstarPath.active.UpdateGraphs (collider.bounds);		
+	}
+	
+	IEnumerator CloseDoor(){
+		audio.Play();
+		isOpen = false;
+		while (timeOpening < timeToOpen){
+			timeOpening += timeInterval;
+			topDoor.transform.position = Vector3.Lerp (goalTop, originalTop, timeOpening/timeToOpen);
+			bottomDoor.transform.position = Vector3.Lerp (goalBottom, originalBottom, timeOpening/timeToOpen);
 			yield return new WaitForSeconds(timeInterval);
 		}		
 		

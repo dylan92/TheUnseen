@@ -11,7 +11,8 @@ public class PlayerCameraBob : MonoBehaviour {
         public float bobSpeed = 0.18f;
         public float bobAmplitude = .2f;
         private bool grounded = true;
-        private float midpoint = 1;
+        private float midpointY = 1;
+		private float midpointX = 0;
         private float maxSpeed = 8;
         
         public float footstepStartPoint = 3*Mathf.PI/2;
@@ -21,12 +22,17 @@ public class PlayerCameraBob : MonoBehaviour {
 		public float maxMult = 1.25f;
 		public float minMult = .8f;
 	
+		public bool shaking = true;
+		public float shakeAmplitudeX = .5f;
+		public float shakeAmplitudeY = .5f;
+
+	
         public void SetGrounded(bool newGrounded){
                 grounded = newGrounded;        
         }        
         
         public void SetCameraY(float localY){
-                midpoint = localY;
+                midpointY = localY;
         }
         
         public void SetMaxSpeed(float speed){
@@ -34,6 +40,9 @@ public class PlayerCameraBob : MonoBehaviour {
         }
         
         void Update(){
+			if (shaking){
+				transform.localPosition = new Vector3(midpointX+Random.Range(0, shakeAmplitudeX), midpointY+Random.Range(0, shakeAmplitudeY), 0);
+			}else{
                 float waveslice = 0.0f;
                 if (!grounded || player.GetComponent<CharacterController>().velocity.sqrMagnitude == 0){
                         timer = 0.0f;        
@@ -64,12 +73,12 @@ public class PlayerCameraBob : MonoBehaviour {
                         }
                         lastTimer = timer;
                         float translateChange = waveslice * bobAmplitude * (player.GetComponent<CharacterController>().velocity.magnitude/maxSpeed);
-                        transform.localPosition = new Vector3(0, midpoint + translateChange, 0);
+                        transform.localPosition = new Vector3(0, midpointY + translateChange, 0);
                 } 
                 else { 
-                        transform.localPosition = new Vector3(0, midpoint, 0);
+                        transform.localPosition = new Vector3(0, midpointY, 0);
                 } 
-        
+			}
         }
         
         void PlayFootStep(){

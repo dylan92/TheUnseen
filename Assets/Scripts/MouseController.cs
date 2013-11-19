@@ -23,7 +23,6 @@ public class MouseController : MonoBehaviour {
         public float holdingDistance;
         
         private Rect defaultCursorPos;        
-        private Rect promptPos;        
         
         private bool isCharging = false;
         private enum holdStates { NOTHOLDING = 0, GRABBING = 1, HOLDING = 2, CHARGING = 3 }
@@ -37,6 +36,9 @@ public class MouseController : MonoBehaviour {
         
         public List<string> prompts;
         
+		public float promptOffsetX = .515f;
+		public float promptOffsetY = .4f;
+	
         public bool isPaused = false;
 		private bool hideHUD = false;       
 		private float hitTime;
@@ -59,6 +61,8 @@ public class MouseController : MonoBehaviour {
                 
                 aimingOrbInfo = aimingOrb.GetComponent<AimingOrb>();
                 holderInfo = holder.GetComponent<Holder>();
+				
+				promptText.transform.position = new Vector3(promptOffsetX, promptOffsetY, 1);
         }
         
         // Update is called once per frame

@@ -1,15 +1,20 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PauseMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\LightTracker.cs">
     <Files>
-      <File FileName="Assets\Scripts\InteractiveItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Generator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterMover.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GeneratorDoorOverride.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LightControlUnit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TextOnApproach.cs" Line="9" Column="2" />
       <File FileName="Assets\Scripts\MouseController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SoundOrb.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PauseMenu.cs" Line="35" Column="12" />
+      <File FileName="Assets\Scripts\NOTES.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\InteractiveItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerCameraBob.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CloseDoor.cs" Line="14" Column="19" />
+      <File FileName="Assets\Scripts\ControlUnit.cs" Line="42" Column="24" />
+      <File FileName="Assets\Scripts\AimingOrb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\OpeningCutscene.cs" Line="34" Column="1" />
+      <File FileName="Assets\Scripts\CharacterMover.js" Line="250" Column="24" />
+      <File FileName="Assets\Scripts\CharacterMoverInput.js" Line="34" Column="44" />
+      <File FileName="Assets\Scripts\Door.cs" Line="39" Column="23" />
+      <File FileName="Assets\Scripts\LightTracker.cs" Line="60" Column="110" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

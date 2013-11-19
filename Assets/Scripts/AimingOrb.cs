@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AimingOrb : MonoBehaviour {
 	
-	public float energy = 10.0f;  // Energy is used to create the orb
+	public float energy = 0.0f;  // Energy is used to create the orb
 	public float maxEnergy = 10.0f;
 	public float power = 0;	
 	public Transform firePos;
@@ -29,12 +29,11 @@ public class AimingOrb : MonoBehaviour {
 	
 	public AudioClip outOfAmmo;
 	
-	IEnumerator Start () {
-		yield return new WaitForSeconds(0.01f);
-		UseEnergy();
+	void Start () {
 		gameObject.SetActive(false);
 		Vector3 orbSize = new Vector3(0, 0, 0);
 		transform.localScale = new Vector3(0, 0, 0);
+		UseEnergy();
 		
 	}
 	

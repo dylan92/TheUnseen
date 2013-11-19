@@ -49,7 +49,7 @@ public class LightTracker : MonoBehaviour {
 		
 		for (int i = 0; i < firedOrbs.Length; i++){
 			RaycastHit hit = new RaycastHit();
-			if (Physics.Raycast (transform.position, firedOrbs[i].transform.position-transform.position, out hit, sightRange, ignoreEnemyMask)) {
+			if (Physics.Raycast (transform.position, firedOrbs[i].transform.position-transform.position, out hit, 1000, ignoreEnemyMask)) {
 				if (hit.transform.gameObject == firedOrbs[i]){
 					attractionPoints.Add (firedOrbs[i]);	
 				}
@@ -57,7 +57,7 @@ public class LightTracker : MonoBehaviour {
 		}
 		
 		RaycastHit hit2 = new RaycastHit();
-		if (Physics.Raycast (transform.position, player.transform.position-transform.position, out hit2, 1000, ignoreEnemyMask)) {
+		if (Physics.Raycast (transform.position, player.transform.position-transform.position, out hit2, sightRange, ignoreEnemyMask)) {
 			if (hit2.transform.gameObject == player){
 				if (Vector3.Angle((transform.position-player.transform.position), transform.forward) > 90f){
 					attractionPoints.Add (player);	

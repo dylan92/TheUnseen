@@ -27,7 +27,12 @@ public class InteractiveItem : SoundItems {
 		InteractiveItem interactiveComponent = target.transform.root.GetComponentInChildren<InteractiveItem>();
 		NoninteractiveItem noninteractiveComponent = target.transform.root.GetComponentInChildren<NoninteractiveItem>();
 		
-		if (interactiveComponent != null){
+		//THE ORDER OF THE if-ELSEIF HERE IS VERY IMPORTANT BECAUSE AN INTERACTIVEITEM IS ALLOWED TO BE A CHILD OF A NONINTERACTIVE, BUT NOT VICE VERSA 
+		if (noninteractiveComponent != null){			
+			float noiseFactor = noisePotential*noninteractiveComponent.noisePotential;
+			float intensity = noiseFactor * rigidbody.velocity.magnitude;
+			makeSound (intensity, noninteractiveComponent, col.contacts[0].point);		
+		}else if (interactiveComponent != null){
 			if (soundsToNotRepeat.Contains(target)){//this prevents us from generating the sound twice (once for each interactiveComponent)
 				soundsToNotRepeat.Remove(target);
 			}else{
@@ -35,15 +40,7 @@ public class InteractiveItem : SoundItems {
 				float noiseFactor = noisePotential*interactiveComponent.noisePotential;
 				float intensity = noiseFactor * (rigidbody.velocity-target.rigidbody.velocity).magnitude;
 				makeSound (intensity, interactiveComponent, col.contacts[0].point);
-				//now play soundToMake scaled to intensity, maybe also work out a ratio that if one objects noisePotential is higher, it should be propirtionately louder
-				//now play interactiveComponent.soundToMake scaled to intensity, maybe also work out a ratio that if one objects noisePotential is higher, it should be propirtionately louder
-
 			}
-		}else if (noninteractiveComponent != null){			
-			float noiseFactor = noisePotential*noninteractiveComponent.noisePotential;
-			float intensity = noiseFactor * rigidbody.velocity.magnitude;
-			makeSound (intensity, noninteractiveComponent, col.contacts[0].point);		
-			//now play soundToMake scaled to intensity
 		}
     }	
 		

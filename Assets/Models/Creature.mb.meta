@@ -224,6 +224,17 @@ ModelImporter:
     100436: Creature_Rig_v6:upr_spineik1_j
     100438: Creature_Rig_v6:upr_spineik2_j
     100440: Creature_Rig_v6:upr_spineik3_j
+    100442: Creature_Rig_v6:back_chest_curve_j
+    100444: Creature_Rig_v6:back_hip_curve_j
+    100446: Creature_Rig_v6:back_mid_curve_j
+    100448: Creature_Rig_v6:lwr_chest_spine_ctrl
+    100450: Creature_Rig_v6:lwr_chest_spine_o
+    100452: Creature_Rig_v6:lwr_mid_spine_ctrl
+    100454: Creature_Rig_v6:lwr_mid_spine_o
+    100456: Creature_Rig_v6:lwr_spine_ctrl
+    100458: Creature_Rig_v6:lwr_spine_o
+    100460: Creature_Rig_v6:lwrBody_curve
+    100462: Creature_Rig_v6:lwrBody_ik
     400000: //RootNode
     400002: Creature_Rig_v6:arm_iks
     400004: Creature_Rig_v6:chest_ctrl
@@ -445,9 +456,21 @@ ModelImporter:
     400436: Creature_Rig_v6:upr_spineik1_j
     400438: Creature_Rig_v6:upr_spineik2_j
     400440: Creature_Rig_v6:upr_spineik3_j
+    400442: Creature_Rig_v6:back_chest_curve_j
+    400444: Creature_Rig_v6:back_hip_curve_j
+    400446: Creature_Rig_v6:back_mid_curve_j
+    400448: Creature_Rig_v6:lwr_chest_spine_ctrl
+    400450: Creature_Rig_v6:lwr_chest_spine_o
+    400452: Creature_Rig_v6:lwr_mid_spine_ctrl
+    400454: Creature_Rig_v6:lwr_mid_spine_o
+    400456: Creature_Rig_v6:lwr_spine_ctrl
+    400458: Creature_Rig_v6:lwr_spine_o
+    400460: Creature_Rig_v6:lwrBody_curve
+    400462: Creature_Rig_v6:lwrBody_ik
     4300000: Creature_Rig_v6:Creature_base_v1_uv:Group1
     7400000: Walk
     7400002: Run
+    7400004: Attack
     9500000: //RootNode
     11100000: //RootNode
     13700000: Creature_Rig_v6:Creature_base_v1_uv:Group1
@@ -494,6 +517,27 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Attack
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 74
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

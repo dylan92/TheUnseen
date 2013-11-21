@@ -43,10 +43,7 @@ public class Generator : MonoBehaviour {
 				foreach (GameObject g in particles) {
 					g.SetActive(false);
 				} 
-				audio.PlayOneShot(generatorStart, AudioListener.volume);
-				audio.clip = generatorRun;
-				audio.loop = true;
-				audio.Play();
+				StartCoroutine(StartGenerator());
 				callOnce = true;
 			}
 			//disk1.transform.Rotate(0, 20 * Time.deltaTime, 0);
@@ -70,5 +67,13 @@ public class Generator : MonoBehaviour {
 		audio.PlayOneShot(generatorStop, AudioListener.volume);
 		yield return new WaitForSeconds(5.0f);
 		Application.LoadLevel(1);
+	}
+	
+	private IEnumerator StartGenerator() {
+			audio.PlayOneShot(generatorStart, AudioListener.volume);
+			yield return new WaitForSeconds(1.8f);
+			audio.clip = generatorRun;
+			audio.loop = true;
+			audio.Play();
 	}
 }

@@ -27,6 +27,8 @@ public class AimingOrb : MonoBehaviour {
 	public float maxRange;
 	public float maxSpeed;	
 	
+	public AudioClip charge;
+	public AudioClip fire;
 	public AudioClip outOfAmmo;
 	
 	void Start () {
@@ -39,6 +41,10 @@ public class AimingOrb : MonoBehaviour {
 	
 	public void Charge (float deltaTime){
 		if (energy > 0.0f && energy > power) {
+			Camera.main.gameObject.audio.clip = charge;
+			if (Camera.main.gameObject.audio.isPlaying == false) {
+				Camera.main.gameObject.audio.Play(); 
+			}
 			power += (chargeRate/100)*(maxPower-minPower)*deltaTime;
 			if (power > maxPower){
 				power = maxPower;
@@ -88,6 +94,8 @@ public class AimingOrb : MonoBehaviour {
 	
 	public void FireShot (){
 		if (energy > 0.0f) {
+			Camera.main.gameObject.audio.clip = fire;
+			Camera.main.gameObject.audio.Play(); 
 			energy -= power;
 			gameObject.SetActive(false);
 			float ratio = power/maxPower;		

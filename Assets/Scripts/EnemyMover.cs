@@ -4,7 +4,11 @@ using System.Collections;
 using Pathfinding;
 
 public class EnemyMover : MonoBehaviour {
-	
+
+	public GameObject frontMarker;
+	public GameObject centerMarker;
+	public GameObject backMarker;
+
 	public GameObject creature;
 	public AudioClip walkSound;
 	public AudioClip attackSound;
@@ -32,7 +36,13 @@ public class EnemyMover : MonoBehaviour {
 	enum states {WANDER, CHASE, CHASEPLAYER, ATTACK};
 	
 	private states state;
-	
+
+	private float distFront = 0;
+	private float distCenter = 0;
+	private float distBack = 0;
+
+	public LayerMask onlyGround;
+
 	// Use this for initialization
 	void Start () {
 		creature.animation.CrossFade("Walk");
@@ -114,17 +124,42 @@ public class EnemyMover : MonoBehaviour {
 		Vector3 dir = path.vectorPath[currentWaypoint] - transform.position;
     	dir.y = 0;
 		RotateTowards(dir);
-    	//Quaternion rot = Quaternion.LookRotation(dir);
+//Quaternion rot = Quaternion.LookRotation(dir);
     	//transform.rotation = Quaternion.Slerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
-				
+
+		GetFrontBackDistance();
+		while (distBack-distFront>.1){
+			Vector3 rot = transform.eulerAngles;
+			rot.x -= 5;
+			transform.eulerAngles = rot;
+			GetFrontBackDistance ();
+		}
+		while (distBack-distFront<-.1){
+			Vector3 rot = transform.eulerAngles;
+			rot.x += 5;
+			transform.eulerAngles = rot;
+			GetFrontBackDistance ();
+		}
+
+		GetFrontBackDistance();
+		if (distCenter > 1.2f){
+			Vector3 pos = transform.position;
+			pos.y -= (distCenter-1.2f);
+			transform.position = pos;
+		}
+		if (distCenter < 1f){
+			Vector3 pos = transform.position;
+			pos.y -= (1-distCenter);
+			transform.position = pos;
+		}
+
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
         if (Vector3.Distance (transform.position,path.vectorPath[currentWaypoint]) < minDistance) {
             currentWaypoint++;
             return;
         }
-		
-		
+
 		/*
 		 * if (Vector3.Distance (transform.position, target.transform.position) > minDistance){
 				if (navigator == null) {
@@ -136,7 +171,22 @@ public class EnemyMover : MonoBehaviour {
 		*/
 		
 	}
-	
+
+	public void GetFrontBackDistance(){
+		RaycastHit hit = new RaycastHit();
+		if (Physics.Raycast (frontMarker.transform.position, -Vector3.up, out hit, 100.0f, onlyGround)) {
+			distFront = hit.distance;
+		}
+		RaycastHit hit2 = new RaycastHit();
+		if (Physics.Raycast (backMarker.transform.position, -Vector3.up, out hit2, 100.0f, onlyGround)) {
+			distBack = hit2.distance;
+		}
+		RaycastHit hit3 = new RaycastHit();
+		if (Physics.Raycast (centerMarker.transform.position, -Vector3.up, out hit3, 100.0f, onlyGround)) {
+			distCenter = hit3.distance;
+		}
+	}
+
 	public GameObject GetNearestWaypoint(){
 		GameObject[] waypoints = GameObject.FindGameObjectsWithTag ("Waypoint");
 		if (waypoints.Length == 0){

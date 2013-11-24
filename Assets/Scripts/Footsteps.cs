@@ -7,7 +7,9 @@ public class Footsteps : MonoBehaviour {
 	public AudioClip[] landAudio;
 	
 	public GameObject soundOrb;
-	
+
+	public float mult = 1f;
+
 	public float intensityDecrease = .4f;
 	public float minStepIntensity = .15f;
 	public float maxStepIntensity = 1;
@@ -54,6 +56,7 @@ public class Footsteps : MonoBehaviour {
 	}
 	
 	void makeSound (float intensity){
+		intensity *= mult;
 		if (intensity > 0){
 			soundOrb.GetComponent<SoundOrb>().intensity = intensity;		
 			GameObject sound = (GameObject)Instantiate(soundOrb, transform.position, transform.rotation);		

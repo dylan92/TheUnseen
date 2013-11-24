@@ -78,9 +78,7 @@ public class MouseController : MonoBehaviour {
                         UpdatePrompts();
                         LeftMouseChecks (Time.deltaTime);
                         RightMouseChecks (Time.deltaTime);
-						if (Time.time - hitTime < 1.0f) {
-                        	borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 1-(Time.time - hitTime));
-						}
+						borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 1-(playerHealth/maxHealth));
                         if(playerHealth < maxHealth) {
                                 playerHealth += recoverRate*Time.deltaTime;
                                 if(playerHealth > maxHealth) {
@@ -184,9 +182,8 @@ public class MouseController : MonoBehaviour {
         }
         
         public IEnumerator TakeDamage(float dmg) {
-                if(playerHealth > 0) {
-                	playerHealth -= dmg;
-					hitTime = Time.time;
+				playerHealth -= dmg;
+				if(playerHealth > 0) {
 					audio.PlayOneShot(damageSounds[(int)playerHealth], AudioListener.volume);	
 					yield return new WaitForSeconds(0.5f);
                 } else {

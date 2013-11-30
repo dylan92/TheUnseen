@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+	<asset>
+		<contributor>
+			<authoring_tool>PlayUp</authoring_tool>							
+		</contributor>
+		<created>2013-11-24T15:53:38Z</created> 										
+		<modified>2013-11-24T15:53:38Z</modified>										
+		<revision>1.4.1</revision>
+		<unit meter="1.0" name="meter"></unit>
+	</asset>
+	<library_images>
+		<image id="Monitor5_tga_img" format="bitmap" height="256" width="512" depth="32">
+			<init_from>PlayUp/Objects/Materials/Textures/Monitor5.tga</init_from>
+		</image>
+		<image id="SUDCColor007_tga_img" format="bitmap" height="32" width="32" depth="32">
+			<init_from>PlayUp/Objects/Materials/Textures/playup_nomaterial.tga</init_from>
+		</image>
+	</library_images>
+	<library_effects>
+		<effect id="-1-Monitor5_fx">								
+			<profile_COMMON>
+				<newparam sid="Monitor5_tga_surface">
+					<surface type="2D">
+						<init_from>Monitor5_tga_img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="Monitor5_tga_sampler">
+					<sampler2D>
+						<source>Monitor5_tga_surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="default">
+					<phong>
+						<emission>
+							<color sid="emission">0.000000 0.000000 0.000000 1.000000</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.000000 0.000000 0.000000 1.000000</color>
+						</ambient>
+						<diffuse>
+							<texture texture="Monitor5_tga_sampler" texcoord="diffuse_TEXCOORD"></texture> RARRR~!~
+						</diffuse>
+						<specular>
+							<color sid="specular">0.000000 0.000000 0.000000 1.000000</color>
+						</specular>
+						<shininess>
+							<float sid="shininess">0.000000</float>
+						</shininess>
+						<reflective>
+							<color sid="reflective">0.000000 0.000000 0.000000 1.000000</color>
+						</reflective>
+						<reflectivity>
+							<float sid="reflectivity">0.000000</float>
+						</reflectivity>
+						<transparent opaque="RGB_ZERO">
+							<color sid="transparent">0.000000 0.000000 0.000000 0.000000</color>
+						</transparent>
+						<transparency>
+							<float sid="transparency">0.000000</float>
+						</transparency>
+						<index_of_refraction>
+							<float sid="index_of_refraction">0.000000</float>
+						</index_of_refraction>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+		<effect id="-2-SUDCColor007_fx">								
+			<profile_COMMON>
+				<newparam sid="SUDCColor007_tga_surface">
+					<surface type="2D">
+						<init_from>SUDCColor007_tga_img</init_from>
+					</surface>
+				</newparam>
+				<newparam sid="SUDCColor007_tga_sampler">
+					<sampler2D>
+						<source>SUDCColor007_tga_surface</source>
+					</sampler2D>
+				</newparam>
+				<technique sid="default">
+					<phong>
+						<emission>
+							<color sid="emission">0.000000 0.000000 0.000000 1.000000</color>
+						</emission>
+						<ambient>
+							<color sid="ambient">0.000000 0.000000 0.000000 1.000000</color>
+						</ambient>
+						<diffuse>
+							<color sid="diffuse">0.2274509788 0.2274509788 0.2274509788 1.000000</color>
+						</diffuse>
+						<specular>
+							<color sid="specular">0.000000 0.000000 0.000000 1.000000</color>
+						</specular>
+						<shininess>
+							<float sid="shininess">0.000000</float>
+						</shininess>
+						<reflective>
+							<color sid="reflective">0.000000 0.000000 0.000000 1.000000</color>
+						</reflective>
+						<reflectivity>
+							<float sid="reflectivity">0.000000</float>
+						</reflectivity>
+						<transparent opaque="RGB_ZERO">
+							<color sid="transparent">0.000000 0.000000 0.000000 0.000000</color>
+						</transparent>
+						<transparency>
+							<float sid="transparency">0.000000</float>
+						</transparency>
+						<index_of_refraction>
+							<float sid="index_of_refraction">0.000000</float>
+						</index_of_refraction>
+					</phong>
+				</technique>
+			</profile_COMMON>
+		</effect>
+
+	</library_effects>
+	<library_materials>
+		<material id="-1-Monitor5">									
+			<instance_effect url="#-1-Monitor5_fx"></instance_effect>	
+		</material>
+		<material id="-2-SUDCColor007">									
+			<instance_effect url="#-2-SUDCColor007_fx"></instance_effect>	
+		</material>
+	</library_materials>
+	<library_geometries>
+		<geometry id="geometries_0">												
+			<mesh>
+				<source id="geometries_0-Pos">											
+					<float_array id="geometries_0-Pos-array" count="12">				
+						0.601980390271856 0.0 -2.2
+						0.601980390271856 1.0 -0.0
+						0.601980390271856 0.0 -0.0
+						0.601980390271856 1.0 -2.2
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Pos-array" count="4" stride="3"> 	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_0-Normal">									
+					<float_array id="geometries_0-Normal-array" count="3">			
+						0.025400 0.000000 0.000000
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Normal-array" count="1" stride="3">	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_0-Texture_Projection">
+					<float_array id="geometries_0-Texture_Projection-array" count="8">
+						1.049133 2.007344
+						-0.050867 3.007344
+						-0.050867 2.007344
+						1.049133 3.007344
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_0-Texture_Projection-array" count="4" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geometries_0-Vtx">										
+					<input semantic="POSITION" source="#geometries_0-Pos"/>				
+				</vertices>
+				<triangles count="2" material="-1-Monitor5">		
+					<input semantic="VERTEX" source="#geometries_0-Vtx" offset="0"/>
+					<input semantic="NORMAL" source="#geometries_0-Normal" offset="1"/>	
+					<input semantic="TEXCOORD" source="#geometries_0-Texture_Projection" offset="2"/>
+					<p>
+						0	0	0
+						1	0	1
+						2	0	2
+						1	0	1
+						0	0	0
+						3	0	3
+					</p>
+				</triangles>
+			</mesh>
+		</geometry>
+		<geometry id="geometries_1">												
+			<mesh>
+				<source id="geometries_1-Pos">											
+					<float_array id="geometries_1-Pos-array" count="72">				
+						0.5 0.6 -0.7
+						0.0 0.4 -0.7
+						0.5 0.4 -0.7
+						0.0 0.6 -0.7
+						0.0 0.6 -0.9
+						0.0 0.4 -0.9
+						0.5 1.0 -2.2
+						0.601980390271856 0.0 -2.2
+						0.5 0.0 -2.2
+						0.601980390271856 1.0 -2.2
+						0.5 1.0 -0.0
+						0.5 1.80477854883065e-016 -0.0
+						0.5 0.6 -0.9
+						0.5 0.6 -1.3
+						0.5 0.4 -0.9
+						0.5 0.6 -1.5
+						0.5 0.4 -1.3
+						0.5 0.4 -1.5
+						0.601980390271856 1.0 -0.0
+						0.0 0.4 -1.3
+						0.0 0.4 -1.5
+						0.0 0.6 -1.5
+						0.0 0.6 -1.3
+						0.601980390271856 0.0 -0.0
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_1-Pos-array" count="24" stride="3"> 	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_1-Normal">									
+					<float_array id="geometries_1-Normal-array" count="24">			
+						0.000000 -0.025400 0.000000
+						-0.025400 0.000000 0.000000
+						0.000000 0.025400 0.000000
+						-0.000000 0.000000 0.025400
+						0.000000 0.000000 -0.025400
+						0.000000 0.025400 -0.000000
+						0.000000 0.000000 0.025400
+						-0.000000 -0.000000 -0.025400
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_1-Normal-array" count="8" stride="3">	
+							<param name="X" type="float"/>
+							<param name="Y" type="float"/>
+							<param name="Z" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<source id="geometries_1-Texture_Projection">
+					<float_array id="geometries_1-Texture_Projection-array" count="102">
+						19.685039 23.622047
+						0.000000 15.748031
+						19.685039 15.748031
+						0.000000 23.622047
+						-35.433071 23.622047
+						-27.559055 15.748031
+						-27.559055 23.622047
+						-35.433071 15.748031
+						-19.685039 39.370079
+						-23.700015 0.000000
+						-19.685039 0.000000
+						-23.700015 39.370079
+						0.000000 39.370079
+						0.000000 0.000000
+						-86.614173 39.370079
+						-51.181102 23.622047
+						-59.055118 23.622047
+						-86.614173 0.000000
+						-51.181102 15.748031
+						-59.055118 15.748031
+						23.700015 0.000000
+						19.685039 86.614173
+						19.685039 0.000000
+						23.700015 86.614173
+						-19.685039 59.055118
+						0.000000 51.181102
+						0.000000 59.055118
+						-19.685039 51.181102
+						0.000000 23.622047
+						-19.685039 15.748031
+						0.000000 15.748031
+						-19.685039 23.622047
+						-19.685039 35.433071
+						0.000000 27.559055
+						0.000000 35.433071
+						-19.685039 27.559055
+						-19.685039 15.748031
+						-19.685039 23.622047
+						19.685039 27.559055
+						19.685039 35.433071
+						-23.700015 86.614173
+						-19.685039 -0.000000
+						-19.685039 86.614173
+						-23.700015 -0.000000
+						23.700015 39.370079
+						19.685039 0.000000
+						23.700015 0.000000
+						19.685039 39.370079
+						19.685039 51.181102
+						0.000000 59.055118
+						19.685039 59.055118
+					</float_array>
+					<technique_common>
+						<accessor source="#geometries_1-Texture_Projection-array" count="51" stride="2">
+							<param name="S" type="float"/>
+							<param name="T" type="float"/>
+						</accessor>
+					</technique_common>
+				</source>
+				<vertices id="geometries_1-Vtx">										
+					<input semantic="POSITION" source="#geometries_1-Pos"/>				
+				</vertices>
+				<triangles count="42" material="-2-SUDCColor007">		
+					<input semantic="VERTEX" source="#geometries_1-Vtx" offset="0"/>
+					<input semantic="NORMAL" source="#geometries_1-Normal" offset="1"/>	
+					<input semantic="TEXCOORD" source="#geometries_1-Texture_Projection" offset="2"/>
+					<p>
+						0	0	0
+						1	0	1
+						2	0	2
+						1	0	1
+						0	0	0
+						3	0	3
+						4	1	4
+						1	1	5
+						3	1	6
+						1	1	5
+						4	1	4
+						5	1	7
+						6	2	8
+						7	2	9
+						8	2	10
+						7	2	9
+						6	2	8
+						9	2	11
+						10	1	12
+						0	1	6
+						11	1	13
+						0	1	6
+						10	1	12
+						6	1	14
+						0	1	6
+						6	1	14
+						12	1	4
+						12	1	4
+						6	1	14
+						13	1	15
+						12	1	4
+						13	1	15
+						14	1	7
+						13	1	15
+						6	1	14
+						15	1	16
+						11	1	13
+						2	1	5
+						8	1	17
+						2	1	5
+						11	1	13
+						0	1	6
+						8	1	17
+						2	1	5
+						14	1	7
+						8	1	17
+						14	1	7
+						16	1	18
+						16	1	18
+						14	1	7
+						13	1	15
+						8	1	17
+						16	1	18
+						17	1	19
+						8	1	17
+						17	1	19
+						15	1	16
+						8	1	17
+						15	1	16
+						6	1	14
+						18	3	20
+						6	3	21
+						10	3	22
+						6	3	21
+						18	3	20
+						9	3	23
+						17	4	24
+						19	4	25
+						20	4	26
+						19	4	25
+						17	4	24
+						16	4	27
+						21	5	28
+						17	5	29
+						20	5	30
+						17	5	29
+						21	5	28
+						15	5	31
+						13	0	0
+						19	0	1
+						16	0	2
+						19	0	1
+						13	0	0
+						22	0	3
+						21	1	16
+						19	1	18
+						22	1	15
+						19	1	18
+						21	1	16
+						20	1	19
+						14	4	32
+						1	4	33
+						5	4	34
+						1	4	33
+						14	4	32
+						2	4	35
+						4	2	3
+						14	2	36
+						5	2	1
+						14	2	36
+						4	2	3
+						12	2	37
+						0	6	38
+						4	6	34
+						3	6	33
+						4	6	34
+						0	6	38
+						12	6	39
+						7	7	40
+						11	7	41
+						8	7	42
+						11	7	41
+						7	7	40
+						23	7	43
+						18	0	44
+						11	0	45
+						23	0	46
+						11	0	45
+						18	0	44
+						10	0	47
+						13	6	48
+						21	6	49
+						22	6	25
+						21	6	49
+						13	6	48
+						15	6	50
+					</p>
+				</triangles>
+			</mesh>
+		</geometry>
+	</library_geometries>
+	<library_visual_scenes>
+		<visual_scene id="visual_scenes_0" name="untitled">
+			<node id="UnityExportNode_">					
+				<translate sid="translation">0.000000 0.000000 0.000000</translate>
+				<rotate sid="rotation_z">0.000000 0.000000 1.000000 0.000000</rotate>
+				<rotate sid="rotation_y">0.000000 1.000000 0.000000 0.000000</rotate>
+				<rotate sid="rotation_x">1.000000 0.000000 0.000000 0.000000</rotate>
+				<scale sid="scale">1.000000 1.000000 1.000000</scale>
+							<node id="mesh0%root%0%">													
+								<translate sid="translation">0 0 0</translate><rotate>0 0 0 0</rotate><scale sid="scale">1.000000 1.000000 1.000000</scale>
+								<instance_geometry url="#geometries_0">
+									<bind_material>
+										<technique_common>
+											<instance_material symbol="-1-Monitor5" target="#-1-Monitor5"> 
+
+
+
+
+												<bind semantic="diffuse_TEXCOORD" target="geometries_0-"></bind>
+											</instance_material>	
+										</technique_common>
+									</bind_material>
+								</instance_geometry>
+							<node id="mesh0%root%1%">													
+								<translate sid="translation">0 0 0</translate><rotate>0 0 0 0</rotate><scale sid="scale">1.000000 1.000000 1.000000</scale>
+								<instance_geometry url="#geometries_1">
+									<bind_material>
+										<technique_common>
+											<instance_material symbol="-2-SUDCColor007" target="#-2-SUDCColor007"> 
+
+
+
+
+												<bind semantic="diffuse_TEXCOORD" target="geometries_1-"></bind>
+											</instance_material>	
+										</technique_common>
+									</bind_material>
+								</instance_geometry>
+				</node>
+				</node>
+			</node>
+		</visual_scene>
+	</library_visual_scenes>
+	<scene>
+		<instance_visual_scene url="#visual_scenes_0"/>
+	</scene>
+</COLLADA>

@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour {
 	public GUIText directionalLightSlider;
 	public GameObject volumeSliderButton;
 	public GUIText volumeSlider;
+	public GameObject sensitivitySliderButton;
+	public GUIText sensitivitySlider;
 	public GameObject lowButton;
 	public GameObject mediumButton;
 	public GameObject highButton;
@@ -24,12 +26,16 @@ public class PauseMenu : MonoBehaviour {
 	private float audioLevel = 1.0f;
 	private int ambientLightValue;
 	private int directionalLightValue;
-	
+
+	public MouseLook xLook;
+	public MouseLook yLook;
+
 	private SavedVaribales saved;
 	
 	void Start() {
-		saved = GameObject.Find("SavedVariables").GetComponent<SavedVaribales>();	
-		if (saved != null) {
+		GameObject savedContainer = GameObject.Find("SavedVariables");
+		if (savedContainer != null) {
+			saved = savedContainer.GetComponent<SavedVaribales>();	
 			if (saved.ssao) {
 				ssao = true;
 				SSAOcheckBox.SendMessage("Select");
@@ -56,11 +62,20 @@ public class PauseMenu : MonoBehaviour {
 		} else if (QualitySettings.GetQualityLevel() == 3) {
 			ultraButton.SendMessage("Select");	
 		}
-		
-		volumeSliderButton.SendMessage("setValue", saved.volume * 100.0f);
+
+		if (saved != null){
+			volumeSliderButton.SendMessage("setValue", saved.volume * 100.0f);
+		}else{
+			volumeSliderButton.SendMessage("setValue", 100.0f);
+		}
 		ambientLightSliderButton.SendMessage("setValue", RenderSettings.ambientLight.r*255f);
 		directionalLightSliderButton.SendMessage("setValue", directionalLight.intensity*50f);
-		
+
+		if (saved != null){
+			sensitivitySliderButton.SendMessage("setValue", saved.sensitivity * 10.0f);
+		}else{
+			sensitivitySliderButton.SendMessage("setValue", 10.0f);
+		}
 	}
 	
 	// Update is called once per frame
@@ -75,6 +90,9 @@ public class PauseMenu : MonoBehaviour {
 		// Read in global light slider values
 		directionalLightValue = int.Parse(directionalLightSlider.text);
 		directionalLight.intensity = ((float)directionalLightValue / 50.0f);
+
+		xLook.sensitivityX = float.Parse(sensitivitySlider.text);
+		yLook.sensitivityY = float.Parse(sensitivitySlider.text);
 	}
 	
 	public void Message(string m) {

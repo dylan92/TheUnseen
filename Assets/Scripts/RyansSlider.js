@@ -22,35 +22,44 @@ private var xMax : float;
 private var yMin : float;
 private var yMax : float;
 
+private var scaled:boolean = false;
+private var pending :float;
+
 function Start() {
 	yield WaitForEndOfFrame; // The yield command is to make sure the AutoScale script has had a chance to take effect
 	originalX = sliderButton.transform.position.x;
 	originalY = sliderButton.transform.position.y;
+		
+	if (pending != null){
+		setToPending();
+	}
 }
 
 function setValue(newValue: float){
-	currentValue = Mathf.Clamp(newValue, minValue, maxValue);
+	pending = newValue;
+	if (scaled){
+		setToPending();
+	}
+		
+}
+
+function setToPending(){
+	OnMouseDown();
+
+	currentValue = Mathf.Clamp(pending, minValue, maxValue);
 	switch (direction) {
 		case ryansdirections.horizontal:  // For horizontal sliders
-		/*
-			sliderButton.pixelInset.x = 0;
-			xMin = Camera.main.ScreenToViewportPoint(Vector3(sliderBar.GetScreenRect().xMin - (sliderButton.GetScreenRect().width / 2), 0, 0)).x;
-			xMax = Camera.main.ScreenToViewportPoint(Vector3(sliderBar.GetScreenRect().xMax - (sliderButton.GetScreenRect().width / 2), 0, 0)).x;
 			transform.position.x = ((currentValue-minValue)/(maxValue-minValue))*(xMax-xMin);
 			transform.position.x += xMin;
 			transform.position.x = Mathf.Clamp(transform.position.x, xMin, xMax);
-			transform.position.y = originalY;
-			*/
 			break;
 		case ryansdirections.vertical:  // For vertical sliders
-		/*
 			transform.position.y = ((currentValue-minValue)/(maxValue-minValue))*(yMax-yMin);
 			transform.position.y += yMin;
 			transform.position.y = Mathf.Clamp(transform.position.y, yMin, yMax);
-			transform.position.x = originalX;
-			*/
 			break;
 	}
+	
 	// Display the currentValue on a GUIText
 	if (sliderValue != null) {
 		sliderValue.text = Mathf.Round(currentValue).ToString();
@@ -93,6 +102,7 @@ function OnMouseDrag() {
 	}
 	// Update position
 	transform.position = position;
+		
 	mousePos = Input.mousePosition;
 	
 	// Sets the current value of the slider
@@ -114,6 +124,6 @@ function OnMouseDrag() {
 	}
 	// Display the currentValue on a GUIText
 	if (sliderValue != null) {
-		sliderValue.text = Mathf.Round(currentValue).ToString();
+		sliderValue.text = Mathf.Round(currentValue+minValue).ToString();
 	}
 }

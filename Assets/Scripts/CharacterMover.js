@@ -693,7 +693,7 @@ function MaxSpeedInDirection (desiredMovementDirection : Vector3) : float {
 			}else{
 				movement.isSprinting = false;
 				if (playSound) {
-					audio.PlayOneShot(outOfBreath, AudioListener.volume);
+					audio.PlayOneShot(outOfBreath, AudioListener.volume/2);
 					timeForSound = Time.time;
 					playSound = false;
 				}

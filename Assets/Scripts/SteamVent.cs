@@ -9,8 +9,10 @@ public class SteamVent : MonoBehaviour {
 	private bool activated = false;
 	
 	void OnTriggerEnter(Collider other) {
-		activated = true;
-		steam.SetActive(true);
-		steamSound.audio.Play();
+		if (!activated){
+			activated = true;
+			steam.SetActive(true);
+			steamSound.audio.Play();
+		}
 	}
 }

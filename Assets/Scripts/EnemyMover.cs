@@ -34,7 +34,8 @@ public class EnemyMover : MonoBehaviour {
     private float nodeMaxDist;
 	
 	enum states {WANDER, CHASE, CHASEPLAYER, ATTACK};
-	
+
+	private states last_state;
 	private states state;
 
 	private float distFront = 0;
@@ -49,6 +50,7 @@ public class EnemyMover : MonoBehaviour {
 		initialTarget = target;
 		
 		seeker = GetComponent<Seeker>();
+		last_state = states.WANDER;
 		state = states.WANDER;
 		targetPosition = transform.position;
 		
@@ -206,11 +208,15 @@ public class EnemyMover : MonoBehaviour {
 	
 	public void UpdateTarget(GameObject _target) {
 		if (target != _target){
+			last_state = state;
 			if (_target.tag == "Waypoint"){
 				state = states.WANDER;	
 				creature.animation.CrossFade("Walk");
 			}else if (_target.tag == "Player"){
 				state = states.CHASEPLAYER;	
+				if (last_state != states.CHASEPLAYER){
+					NoticePlayer();
+				}
 				creature.animation.CrossFade("Run");
 			}else{
 				state = states.CHASE;	
@@ -222,7 +228,11 @@ public class EnemyMover : MonoBehaviour {
 			seeker.StartPath (transform.position, targetPosition, OnPathComplete);
 		}
 	}
-	
+
+	public void NoticePlayer(){
+		//most likely here you would want to see when the last time NotcePlayer() was called, and if it's been more then a set number of seconds, have the monster rear up and play a roar of some sort
+	}
+
 	protected virtual void RotateTowards (Vector3 dir) {
 		Quaternion rot = this.transform.rotation;
 		Quaternion toTarget = Quaternion.LookRotation (dir);

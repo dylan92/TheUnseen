@@ -78,7 +78,7 @@ public class MouseController : MonoBehaviour {
                         UpdatePrompts();
                         LeftMouseChecks (Time.deltaTime);
                         RightMouseChecks (Time.deltaTime);
-						borderTexture.color = new Color(1.0f, 1.0f, 1.0f, 1-(playerHealth/maxHealth));
+						borderTexture.color = new Color(1.0f, 1.0f, 1.0f, (1-(playerHealth/maxHealth))*.9f);
                         if(playerHealth < maxHealth) {
                                 playerHealth += recoverRate*Time.deltaTime;
                                 if(playerHealth > maxHealth) {
